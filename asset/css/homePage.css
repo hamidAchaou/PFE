@@ -1,0 +1,477 @@
+/* ================== start navbar ======================= */
+.navbar {
+    height: 71px;
+    padding-left: 5%;
+    padding-right: 5%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+
+.navbar a,
+.navbar a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0 10px 30px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #37423b;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.navbar a i,
+.navbar a:focus i {
+  font-size: 12px;
+  line-height: 0;
+  margin-left: 5px;
+}
+
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover>a {
+  color: var(--primary-color);
+}
+
+/* ================== end navbar ======================= */
+/* ================== start header ======================= */
+.jumbotron {
+  /* margin-top: 3%; */
+  /* margin-bottom: 0; */
+    background: url(../../asset/images/pexels-andrea-piacquadio-3846262.jpg) center center/cover;
+    height: 600px;
+}
+
+/* style form serch */
+.advanced{
+
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+
+.btn-secondary,
+.btn-secondary:focus,
+.btn-secondary:active
+
+
+ {
+    color: var(--white-color);
+    background-color: #00838f !important;
+    border-color: #00838f !important;
+    box-shadow: none;
+}
+
+
+.advanced{
+
+    color: #00838f !important;
+}
+
+.form-control:focus{
+    box-shadow: none;
+    border: 1px solid #00838f;
+}
+
+/* 
+---------------------------------------------
+Subscribe
+--------------------------------------------- 
+*/
+
+.subscribe {
+  margin-top: 120px;
+}
+
+.subscribe .inner-content:after {
+  content: '';
+  background-image: url(../img/);
+  position: absolute;
+  width: 195px;
+  height: 138px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  right: -20px;
+  top: -20px;
+}
+
+/* .subscribe .inner-content h1 {
+  color: var(--main-color);
+}
+.subscribe .inner-content h1 span{
+  color: var(--secondary-color);
+} */
+
+.subscribe .inner-content form {
+  width: 100%;
+  height: 80px;
+  border-radius: 15px;
+  background-color: var(--white-color);
+}
+
+.subscribe .inner-content form input {
+  width: 38.5%;
+  margin-top: 20px;
+  line-height: 40px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0px 20px;
+  font-size: 15px;
+  color: #2a2a2a;
+}
+
+.subscribe .inner-content form input#website {
+  border-right: 1px solid var(--light-color);
+}
+
+.subscribe .inner-content form input::placeholder {
+  color: #afafaf;
+}
+
+.subscribe .inner-content form button {
+  display: inline-block;
+  background-color: #03a4ed;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--white-color);
+  width: 20%;
+  margin-right: 10px;
+  text-transform: capitalize;
+  padding: 12px 20px;
+  border-radius: 15px;
+  letter-spacing: 0.25px;
+  border: none;
+  text-align: center;
+  transition: all .3s;
+}
+
+.subscribe .inner-content form button:hover {
+  background-color: #ff695f;
+}
+
+
+/* ================== end navbar ======================= */
+
+.img-work {
+    width: 100%;
+    height: 226px;
+}
+
+
+/*--------------------------------------------------------------
+# works
+--------------------------------------------------------------*/
+.courses {
+  background-color: #363e50;
+  /* color: var(--white-color); */
+  padding: 3%;
+}
+
+.courses .section-title h2 {
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+.courses .section-title p {
+  font-weight: 600;
+  color: var(--light-color);
+}
+
+.courses .course-item {
+    border-radius: 5px;
+    border: 1px solid #eef0ef;
+    background-color: var(--white-color);
+  }
+  
+  .courses .course-content {
+    padding: 15px;
+  }
+  
+  .courses .course-content h3 {
+    font-weight: 700;
+    font-size: 20px;
+  }
+  
+  .courses .course-content h3 a {
+    color: #37423b;
+    transition: 0.3s;
+  }
+  
+  .courses .course-content h3 a:hover {
+    color: var(--primary-color);
+  }
+  
+  .courses .course-content p {
+    font-size: 14px;
+    color: #777777;
+  }
+  
+  .courses .course-content h4 {
+    font-size: 14px;
+    /* background: var(--primary-color); */
+    padding: 7px 14px;
+    /* color: var(--white-color); */
+    margin: 0;
+  }
+  
+  .courses .course-content .price {
+    margin: 0;
+    font-weight: 700;
+    font-size: 18px;
+    /* color: #37423b; */
+  }
+  
+  .courses .trainer {
+    padding-top: 15px;
+    border-top: 1px solid #eef0ef;
+  }
+  
+  .courses .trainer .trainer-profile img {
+    max-width: 50px;
+    border-radius: 50px;
+  }
+  
+  .courses .trainer .trainer-profile span {
+    padding-left: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #5a6c60;
+  }
+  
+  .courses .trainer .trainer-rank {
+    font-size: 18px;
+    /* color: #657a6d; */
+  }
+  
+
+
+/*--------------------------------------------------------------
+# start cards proffissionnals
+--------------------------------------------------------------*/
+.trainers .section-title h2 {
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+.trainers .section-title p {
+  font-weight: 600;
+  /* color: var(--light-color); */
+}
+
+.card-professionals {
+  transition: all 0.3s ease-in-out;
+}
+
+.card-professionals:hover {
+  transform: translateY(-10px);
+}
+
+.trainers .member {
+    text-align: center;
+    margin-bottom: 20px;
+    background: var(--white-color);
+    border: 1px solid #eef0ef;
+  }
+  
+  .trainers .member img {
+    margin: -1px -1px 30px -1px;
+    height: 283px;
+    width: 100%;
+  }
+  
+  .trainers .member .member-content {
+    padding: 0 20px 30px 20px;
+  }
+  
+  .trainers .member h4 {
+    font-weight: 700;
+    margin-bottom: 2px;
+    font-size: 18px;
+  }
+  
+  .trainers .member span {
+    font-style: italic;
+    display: block;
+    font-size: 13px;
+  }
+  
+  .trainers .member p {
+    padding-top: 10px;
+    font-size: 14px;
+    font-style: italic;
+    color: #aaaaaa;
+  }
+  
+  .trainers .member .social {
+    margin-top: 15px;
+  }
+  
+  .trainers .member .social a {
+    color: #7e9486;
+    transition: 0.3s;
+  }
+  
+  .trainers .member .social a:hover {
+    color: var(--primary-color);
+  }
+  
+  .trainers .member .social i {
+    font-size: 18px;
+    margin: 0 2px;
+  }
+
+  
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+.contact {
+  padding-top: 5px;
+}
+
+.contact .info {
+  width: 100%;
+  background: var(--white-color);
+}
+
+.contact .info i {
+  font-size: 20px;
+  color: var(--primary-color);
+  float: left;
+  width: 44px;
+  height: 44px;
+  background: #ecf9f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact .info h4 {
+  padding: 0 0 0 60px;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #37423b;
+}
+
+.contact .info p {
+  padding: 0 0 0 60px;
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #657a6d;
+}
+
+.contact .info .email,
+.contact .info .phone {
+  margin-top: 40px;
+}
+
+.contact .info .email:hover i,
+.contact .info .address:hover i,
+.contact .info .phone:hover i {
+  background: var(--primary-color);
+  color: var(--white-color);
+}
+
+.contact .php-email-form {
+  width: 100%;
+  background: var(--white-color);
+}
+
+.contact .php-email-form .form-group {
+  padding-bottom: 8px;
+}
+
+.contact .php-email-form .error-message {
+  display: none;
+  color: var(--white-color);
+  background: #ed3c0d;
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.contact .php-email-form .error-message br+br {
+  margin-top: 25px;
+}
+
+.contact .php-email-form .sent-message {
+  display: none;
+  color: var(--white-color);
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.contact .php-email-form .loading {
+  display: none;
+  background: var(--white-color);
+  text-align: center;
+  padding: 15px;
+}
+
+.contact .php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: var(--light-color);
+  animation: animate-loading 1s linear infinite;
+}
+
+.contact .php-email-form input,
+.contact .php-email-form textarea {
+  border-radius: 4px;
+  box-shadow: none;
+  font-size: 14px;
+}
+
+.contact .php-email-form input:focus,
+.contact .php-email-form textarea:focus {
+  border-color: var(--primary-color);
+}
+
+.contact .php-email-form input {
+  height: 44px;
+}
+
+.contact .php-email-form textarea {
+  padding: 10px 12px;
+}
+
+.contact .php-email-form button[type=submit] {
+  background: var(--primary-color);
+  border: 0;
+  padding: 10px 35px;
+  color: var(--white-color);
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.contact .php-email-form button[type=submit]:hover {
+  background: #3ac162;
+}
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+

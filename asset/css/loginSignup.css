@@ -1,0 +1,73 @@
+/* * header login */ */
+/* .log {
+    padding: 8%;
+    color: var(--white-color)FFF;
+} */
+
+
+.logSin {
+    background-color: #091E3E;
+}
+
+/* class active login and sign up */
+.show {
+    display: none;
+}
+
+#main-login {
+  /* background: url(/img/4.jpg) center center/cover; */
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+/* form login */
+#header-login  {
+  /* background: url(/img/1.jpg) center center/cover;
+  background-image: url(/img/1.jpg); */
+  background-color: #091E3E;
+  /* background: url(/img/1.jpg); */
+}
+#form-login {
+  /* position: absolute;
+  top: 24%;
+  width: 90%;
+  left: 5%; */
+  background-color: #091e3eee;
+}
+#form-login h1, h5 {
+  color: var(--white-color);
+}
+input {
+  border-radius: 5px;
+}
+#btn-login {
+  border-radius: 5px;
+  color: var(--white-color);
+}
+
+.show {
+  display: none;
+}
+
+@media (max-width: 991.98px) {
+  .sticky-top.navbar-dark {
+      position: relative;
+      background: var(--white-color)FFF;
+  }
+
+  .navbar-dark .navbar-nav .nav-link,
+  .navbar-dark .navbar-nav .nav-link.show,
+  .sticky-top.navbar-dark .navbar-nav .nav-link {
+      padding: 10px 0;
+      color: var(--dark);
+  }
+
+  .navbar-dark .navbar-brand h1 {
+      color: var(--primary);
+  }
+}
+
+.form-group, p {
+  color: var(--white-color);
+}
