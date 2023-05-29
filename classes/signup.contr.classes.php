@@ -33,10 +33,49 @@ class signupContr extends signup
 
   public function signupUser() {
 
+    if ($this->emailTakenCheack() == false) {
+      header("location: ../pages/user/loginSignUp.php?erer=emailMatch");
+      exit();
+    }
+
+    if ($this->invalidEmail() == false) {
+      // echo "invalid Email"
+      header("location: ../index.php?erer=Email");
+      exit();
+    }
+
     $this->setUser($this->first_name, $this->last_name, $this->email, $this->password, $this->date_created, $this->city, $this->phone_number, $this->date_of_birth, $this->gender, $this->occupation, $this->description);
   }
 
+  
 
+
+    // cheack email
+    private function emailTakenCheack() { 
+      if (!$this->checkEmail($this->email)) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+
+    // cheack Email
+  private function invalidEmail() {
+    if (filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+    // // cheack password and confPassword
+    // private function passMatch() {
+    //   if ($this->pass !== $this->repeatPass) {
+    //     return false;
+    //   } else {
+    //     return true;
+    //   }
+    // }
 
 }
 
