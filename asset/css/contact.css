@@ -1,8 +1,17 @@
 .jumbotron {
-    height: 470px;
-    background: url(../images/pexels-andrea-piacquadio-3846262.jpg) center center/cover;
+    height: 400px;
+    background: url(../images/4.jpg) center center/cover;
   }
-  
+  .jumbotron h1 {
+    font-weight: 600;
+    color: var(--primary-color);
+  }
+  .jumbotron h1 span {
+    color: var(--secondary-color);
+  }
+  .jumbotron p {
+    font-weight: 400;
+  }
   
   /*--------------------------------------------------------------
   # Contact
@@ -18,7 +27,7 @@
   
   .contact .info i {
     font-size: 20px;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     float: left;
     width: 44px;
     height: 44px;
@@ -53,7 +62,7 @@
   .contact .info .email:hover i,
   .contact .info .address:hover i,
   .contact .info .phone:hover i {
-    background: var(--secondary-color);
+    background: var(--primary-color);
     color: var(--white-color);
   }
   
@@ -82,7 +91,7 @@
   .contact .php-email-form .sent-message {
     display: none;
     color: var(--white-color);
-    background: #18d26e;
+    background: var(--primary-color);
     text-align: center;
     padding: 15px;
     font-weight: 600;
@@ -102,7 +111,7 @@
     width: 24px;
     height: 24px;
     margin: 0 10px -6px 0;
-    border: 3px solid #18d26e;
+    border: 3px solid var(--primary-color);
     border-top-color: var(--light-color);
     animation: animate-loading 1s linear infinite;
   }
@@ -116,7 +125,7 @@
   
   .contact .php-email-form input:focus,
   .contact .php-email-form textarea:focus {
-    border-color: var(--secondary-color);
+    border-color: var(--primary-color);
   }
   
   .contact .php-email-form input {
@@ -128,7 +137,7 @@
   }
   
   .contact .php-email-form button[type=submit] {
-    background: var(--secondary-color);
+    background: var(--primary-color);
     border: 0;
     padding: 10px 35px;
     color: var(--white-color);

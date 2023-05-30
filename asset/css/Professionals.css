@@ -2,7 +2,7 @@
 # start cards proffi
 --------------------------------------------------------------*/
 .trainers {
-    padding-top: 3%;
+    padding-top: 1%;
 }
 
 .trainers h2 {
@@ -74,5 +74,24 @@
   =============================== */
 .jumbotron {
     height: 300px;
-    background: url(../images/pexels-digital-buggu-352899.jpg) center center/cover;
+    background: url(../images/2.jpg) center center/cover;
 }
+
+  .jumbotron h1 {
+    font-weight: 600;
+    color: var(--primary-color);
+  }
+  .jumbotron h1 span {
+    color: var(--light-color);
+  }
+  .jumbotron p {
+    font-weight: 400;
+  }
+
+  .trainers .section-title h2 {
+    font-weight: 700;
+    color: #03a4ed;
+  }
+  .trainers .section-title p {
+    font-weight: 700;
+  }

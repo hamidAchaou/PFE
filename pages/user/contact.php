@@ -37,9 +37,9 @@
     <!-- ======================== start header ====================== -->
     <div class="jumbotron jumbotron-fluid bg-primary text-white">
         <div class="container">
-          <h1 class="display-4">Title Design Example</h1>
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et magna bibendum bibendum.</p>
-        <a class="btn btn-outline-light btn-lg" href="#" role="button">Learn more</a>
+          <h1 class="display-4">Connect <span> with us</span></h1>
+        <p class="lead">We are always available for your inquiries. Send an email or call us <br> and we will respond to you as soon as possible</p>
+        <a class="btn btn-outline-primary btn-lg" href="#contact" role="button">Contact Us</a>
         </div>
     </div>
     <!-- ==================== end header ============================= -->

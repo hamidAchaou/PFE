@@ -50,9 +50,9 @@
                           <h1 class="display-4 font-weight-bold">Looking for the best <br><span>craftsmen</span></h1>
                           <p class="font-italic mb-5">This site provides you with the best professionals for your business</p>
                           <form id="subscribe" action="" method="get">
-                            <input type="text" name="website" id="website" placeholder="Your Website URL" required="">
-                            <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email" required="">
-                            <button type="submit" id="form-submit" class="main-button ">Subscribe</button>
+                            <input type="text" name="city" id="city" placeholder="your city">
+                            <input type="text" name="occupation" id="occupation" placeholder="Your occupation">
+                            <button type="submit" id="form-submit" class="main-button ">Search</button>
                           </form>
                         </div>
                       </div>
@@ -66,9 +66,9 @@
     </div>
     <!-- ==================== end header ============================= -->
 
-        <!-- ====================== start Professionals ===========================-->
-        <?php include "../../element/homePages/ProfessionalsHomePage.php" ?>
-        <!-- ====================== end Professionals ===========================-->
+    <!-- ====================== start Professionals ===========================-->
+      <?php include "../../element/homePages/ProfessionalsHomePage.php" ?>
+    <!-- ====================== end Professionals ===========================-->
 
     <!--===================== start works   =================================-->
         <?php include "../../element/homePages/worksHomePage.php" ?>

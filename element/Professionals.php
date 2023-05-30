@@ -1,8 +1,8 @@
 <section id="trainers" class="trainers">
 
-    <div class="container section-title">
-        <h2>Courses</h2>
-        <p>Popular Courses</p>
+    <div class="container section-title text-center">
+        <h2>best professionals</h2>
+        <p>get to know me best professionals</p>
     </div>
 
     <div class="container" data-aos="fade-up">

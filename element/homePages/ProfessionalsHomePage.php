@@ -19,7 +19,7 @@
                       Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
                     </p>
                     <div class="social">
-                      <button type="button" class="btn btn-success">Profile</button>
+                      <button type="button" class="btn btn-primary">Profile</button>
                     </div>
                   </div>
                 </div>
@@ -35,7 +35,7 @@
                       Repellat fugiat adipisci nemo illum nesciunt voluptas repellendus. In architecto rerum rerum temporibus
                     </p>
                     <div class="social">
-                      <button type="button" class="btn btn-success">Profile</button>
+                      <button type="button" class="btn btn-primary">Profile</button>
                     </div>
                   </div>
                 </div>
@@ -51,7 +51,7 @@
                       Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et laborum toro des clara
                     </p>
                     <div class="social">
-                      <button type="button" class="btn btn-success">Profile</button>
+                      <button type="button" class="btn btn-primary">Profile</button>
                     </div>
                   </div>
                 </div>

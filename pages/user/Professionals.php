@@ -36,10 +36,9 @@
     <!-- ======================== start header ====================== -->
     <div class="jumbotron jumbotron-fluid bg-primary text-white mb-3">
         <div class="container">
-            <h1 class="display-4">Title Design Example</h1>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et magna bibendum
-                bibendum.</p>
-            <a class="btn btn-outline-light btn-lg" href="#" role="button">Learn more</a>
+            <h1 class="display-4">Get to know the best <span>professionals</span</h1>
+            <p class="lead">Contact the best professionals to get the best job.</p>
+            <a class="btn btn-outline-primary btn-lg" href="#" role="button">Learn more</a>
         </div>
     </div>
     <!-- ==================== end header ============================= -->

@@ -36,7 +36,7 @@
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: var(--primary-color);
+  color: #03a4ed;
 }
 
 /* ================== end navbar ======================= */
@@ -102,12 +102,15 @@ Subscribe
   top: -20px;
 }
 
-/* .subscribe .inner-content h1 {
-  color: var(--main-color);
+.subscribe .inner-content h1 {
+  color: var(--light-color);
+  font-weight: 900;
 }
 .subscribe .inner-content h1 span{
-  color: var(--secondary-color);
-} */
+  color: var(--primary-color);
+  font-weight: 900;
+}
+
 
 .subscribe .inner-content form {
   width: 100%;
@@ -177,7 +180,7 @@ Subscribe
 
 .courses .section-title h2 {
   font-weight: 700;
-  color: var(--secondary-color);
+  color: #03a4ed;
 }
 .courses .section-title p {
   font-weight: 600;
@@ -205,7 +208,7 @@ Subscribe
   }
   
   .courses .course-content h3 a:hover {
-    color: var(--primary-color);
+    color: #03a4ed;
   }
   
   .courses .course-content p {
@@ -215,7 +218,7 @@ Subscribe
   
   .courses .course-content h4 {
     font-size: 14px;
-    /* background: var(--primary-color); */
+    /* background: #03a4ed; */
     padding: 7px 14px;
     /* color: var(--white-color); */
     margin: 0;
@@ -234,8 +237,9 @@ Subscribe
   }
   
   .courses .trainer .trainer-profile img {
-    max-width: 50px;
-    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
   }
   
   .courses .trainer .trainer-profile span {
@@ -257,7 +261,7 @@ Subscribe
 --------------------------------------------------------------*/
 .trainers .section-title h2 {
   font-weight: 700;
-  color: var(--secondary-color);
+  color: #03a4ed;
 }
 .trainers .section-title p {
   font-weight: 600;
@@ -311,6 +315,11 @@ Subscribe
   .trainers .member .social {
     margin-top: 15px;
   }
+
+  .social .member .btn {
+    background-color: #03a4ed;
+    color: #03a4ed;
+  }
   
   .trainers .member .social a {
     color: #7e9486;
@@ -318,7 +327,7 @@ Subscribe
   }
   
   .trainers .member .social a:hover {
-    color: var(--primary-color);
+    color: #03a4ed;
   }
   
   .trainers .member .social i {
@@ -341,7 +350,7 @@ Subscribe
 
 .contact .info i {
   font-size: 20px;
-  color: var(--primary-color);
+  color: #03a4ed;
   float: left;
   width: 44px;
   height: 44px;
@@ -376,7 +385,7 @@ Subscribe
 .contact .info .email:hover i,
 .contact .info .address:hover i,
 .contact .info .phone:hover i {
-  background: var(--primary-color);
+  background: #03a4ed;
   color: var(--white-color);
 }
 
@@ -439,7 +448,7 @@ Subscribe
 
 .contact .php-email-form input:focus,
 .contact .php-email-form textarea:focus {
-  border-color: var(--primary-color);
+  border-color: #03a4ed;
 }
 
 .contact .php-email-form input {
@@ -451,7 +460,7 @@ Subscribe
 }
 
 .contact .php-email-form button[type=submit] {
-  background: var(--primary-color);
+  background: #03a4ed;
   border: 0;
   padding: 10px 35px;
   color: var(--white-color);
@@ -460,7 +469,7 @@ Subscribe
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: #3ac162;
+  background: var(--secondary-color);
 }
 
 @keyframes animate-loading {
