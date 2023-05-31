@@ -1,7 +1,7 @@
 <!-- =========================================
 # form signUp
 ============================================== -->
-<form class="form-Signup show" action="../includes/signup.inc.php" method="post">
+<form class="form-Signup show text-light" action="../includes/signup.inc.php" method="post">
     <h1 class="text-center mb-4">Sign Up</h1>
     <div class="form-row">
         <div class="form-group col-md-6 text-light"> 
