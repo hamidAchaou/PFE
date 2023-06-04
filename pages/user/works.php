@@ -27,11 +27,17 @@
 
 <body>
     <!--=================== start navvar ================================  -->
-    <?php include "../../element/navbar.php" ?>
+    <?php
+    session_start();
+        if(isset($_SESSION['firs_name'])) {
+          include "../../element/navbarProfessionals.php";        
+        } else {
+          include "../../element/navbar.php"; 
+        }
+    ?>
     <!--=================== end navvar ================================  -->
-
     <!--=================== start header ================================  -->
-    <div class="jumbotron jumbotron-fluid bg-primary text-white mb-3">
+    <div class="works works-fluid bg-primary text-white mb-3 ">
         <div class="container">
             <h1 class="display-4">Publications for your professionals</h1>
             <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et magna bibendum bibendum.</p>
@@ -41,7 +47,8 @@
     <!--=================== end header ================================  -->
 
     <!--=================== start posts Works ================================  -->
-    <?php include "../../element/postsWorks.php" ?>
+    <?php
+    include "../../includes/works.inc.php" ?>
     <!--=================== start Posts Works ================================  -->
 
 

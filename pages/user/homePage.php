@@ -30,9 +30,15 @@
 </head>
 
 <body>
+
     <!--=================== start navvar ================================  -->
     <?php
-        include "../../element/navbar.php"        
+    session_start();
+        if(isset($_SESSION['firs_name'])) {
+          include "../../element/navbarProfessionals.php";        
+        } else {
+          include "../../element/navbar.php"; 
+        }
     ?>
     <!--=================== end navvar ================================  -->
 
@@ -67,11 +73,11 @@
     <!-- ==================== end header ============================= -->
 
     <!-- ====================== start Professionals ===========================-->
-      <?php include "../../element/homePages/ProfessionalsHomePage.php" ?>
+      <?php include "../../includes/homePage/professionalsHomePage.inc.php" ?>
     <!-- ====================== end Professionals ===========================-->
 
     <!--===================== start works   =================================-->
-        <?php include "../../element/homePages/worksHomePage.php" ?>
+        <?php include "../../includes/homePage/works-professionalsHomePage.inc.php" ?>
     <!--===================== End Works =====================-->
 
     <!--===================== start contact =================== -->

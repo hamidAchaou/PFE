@@ -31,7 +31,14 @@
 
 <body>
     <!--=================== start navvar ================================  -->
-    <?php include "../../element/navbar.php" ?>
+    <?php
+    session_start();
+        if(isset($_SESSION['firs_name'])) {
+          include "../../element/navbarProfessionals.php";        
+        } else {
+          include "../../element/navbar.php"; 
+        }
+    ?>
     <!--=================== end navvar ================================  -->
 
     <!-- ======================== start header ====================== -->

@@ -26,6 +26,7 @@
     margin: -1px -1px 30px -1px;
     height: 283px;
     width: 100%;
+    
 }
 
 .trainers .member .member-content {
@@ -72,19 +73,21 @@
 /* ==========================
   #header
   =============================== */
-.jumbotron {
-    height: 300px;
+.professionals {
+    height: 400px;
     background: url(../images/2.jpg) center center/cover;
 }
-
-  .jumbotron h1 {
+.professionals div {
+    padding-top: 8%;
+}
+  .professionals h1 {
     font-weight: 600;
     color: var(--primary-color);
   }
-  .jumbotron h1 span {
+  .professionals h1 span {
     color: var(--light-color);
   }
-  .jumbotron p {
+  .professionals p {
     font-weight: 400;
   }
 

@@ -1,3 +1,10 @@
+<script>
+    fetch("http://localhost/PFE/KhedmaPro/includes/professionals.inc.php")
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+    });
+</script>
 <!-- =========================================
 # form logIn
 ============================================== -->

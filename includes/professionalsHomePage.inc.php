@@ -1,5 +1,5 @@
 <?php
-include "../classes/professionalsHomePage.contr.php";
+include "../classes/professionals.contr.php";
 
 $prfessionalsInfo = new getProfessionalsData();
 $dataProfessionals = $prfessionalsInfo->getprofessionals();
@@ -24,13 +24,13 @@ $dataProfessionals = $prfessionalsInfo->getprofessionals();
 
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch card-professionals">
                     <div class="member">
-                        <img src="../../asset/images/man-1.jpg" class="img-fluid" alt="">
+                        <img src="../../asset/uploads/<?php echo $professionnal['img_profile']?>" class="img-fluid" alt="">
                         <div class="member-content">
                             <h4><?php echo $professionnal["first_name"] . $professionnal["last_name"] ?></h4>
                             <span><?php echo $professionnal["occupation"] ?></span>
                             <p><?php echo $professionnal["occupation"] ?></p>
                             <div class="social">
-                                <button type="button" class="btn btn-primary">Profile</button>
+                            <a href="infoProfessionals.php?Id_Professionals=<?php echo $professionnal["Id_Professionals"] ?>" type="button" class="btn btn-primary">Profile</a>
                             </div>
                         </div>
                     </div>

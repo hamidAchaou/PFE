@@ -5,17 +5,25 @@ if (isset($_POST['loginSubmit'])) {
     $email = $_POST['emailLogin'];
     $pass = $_POST['loginPassword'];
 
-    // instantiate signupContr class
+    // instantiate loginContr class
     include "../classes/login-contr.classes.php";
 
     $login = new loginContr($email, $pass);
-
-    // running errore handlersand user signup
+    // $data = $login->getResponse();
+    // running error handlers and user login
     $login->loginUser();
-    
-    // print_r($login);
-    echo $_SESSION['firs_name'];
-    echo $_SESSION['last_name'];
+    header('location: ../pages/user/homePage.php');
+
+
+    // // set content type to JSON
+    // header('Content-Type: application/json');
+
+    // header('Access-Control-Allow-Origin: *');
+    // header('Access-Control-Allow-Methods: GET, POST');
+    // header('Access-Control-Allow-Headers: Content-Type');
+
+    // echo json_encode($login);
 }
+
 
 ?>

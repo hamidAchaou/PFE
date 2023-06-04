@@ -25,16 +25,29 @@ body ::placeholder {
 .profile-userpic img {
     float: none;
     margin: 0 auto;
-    width: 50%;
-    height: 50%;
-    -webkit-border-radius: 50%!important;
-    -moz-border-radius: 50%!important;
-    border-radius: 50%!important
+    width: 90px;
+    height: 90px;
+    /* -webkit-border-radius: 50%!important; */
+    /* -moz-border-radius: 50%!important; */
+    /* border-radius: 50%!important */
 }
 
 .profile-usertitle {
     text-align: center;
     margin-top: 20px
+}
+
+
+.info-contact h2 {
+    font-weight: 700;
+    padding-bottom: 3%;
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+}
+.info-contact i {
+    color: var(--blue-color);
+}
+.info-contact h2 span {
+     color: var(--primary-color);
 }
 
 .profile-usertitle-name {

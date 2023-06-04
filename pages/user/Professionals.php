@@ -30,11 +30,18 @@
 
 <body>
     <!--=================== start navvar ================================  -->
-    <?php include "../../element/navbar.php" ?>
+    <?php
+    session_start();
+        if(isset($_SESSION['firs_name'])) {
+          include "../../element/navbarProfessionals.php";        
+        } else {
+          include "../../element/navbar.php"; 
+        }
+    ?>
     <!--=================== end navvar ================================  -->
 
     <!-- ======================== start header ====================== -->
-    <div class="jumbotron jumbotron-fluid bg-primary text-white mb-3">
+    <div class="professionals jumbotron-fluid bg-primary text-white mb-3">
         <div class="container">
             <h1 class="display-4">Get to know the best <span>professionals</span</h1>
             <p class="lead">Contact the best professionals to get the best job.</p>
@@ -44,7 +51,7 @@
     <!-- ==================== end header ============================= -->
 
     <!-- ====================== start Professionals ===========================-->
-      <?php include "../../element/Professionals.php" ?>
+      <?php include "../../includes/professionals.inc.php" ?>
     <!-- ====================== end Professionals ===========================-->
 
 

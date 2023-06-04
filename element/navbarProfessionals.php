@@ -11,16 +11,16 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item">
-            <a class="nav-link" href="homePage.html">Home</a>
+            <a class="nav-link" href="../user/homePage.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="works.html">Works</a>
+            <a class="nav-link" href="../user/works.php">Works</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="Professionals.html">Professionals</a>
+            <a class="nav-link" href="../user/Professionals.php">Professionals</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link" href="../user/contact.php">Contact</a>
           </li>
         </ul>
         <div class="form-inline my-2 my-lg-0">
@@ -31,9 +31,8 @@
                   <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" width="40" height="40" class="rounded-circle">
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Dashboard</a>
-                  <a class="dropdown-item" href="#">Edit Profile</a>
-                  <a class="dropdown-item" href="#">Log Out</a>
+                  <a class="dropdown-item" href="../user/profile.php">Profile</a>
+                  <a class="dropdown-item" href="../../includes/logout.inc.php">Log Out</a>
                 </div>
               </li>
             </ul>
@@ -60,28 +59,25 @@
           <div class="col-md-4 hed-addWork"></div>
           <div class="col-md-8">
             <h2 class="text-center pt-4">Add your works new</h2>
-            <form class="p-3">
+            <form class="p-3" action="../../includes/addPosts.inc.php" method="post" enctype="multipart/form-data">
+              <input type="hidden" name="Id_Professionals" value="<?php echo $_SESSION['Id_Professionals'] ?>">
               <div class="form-group">
                 <label for="title">Title</label>
-                <input type="text" class="form-control" id="title" placeholder="Enter title">
+                <input type="text" class="form-control" id="title" name="title" placeholder="Enter title">
               </div>
               <div class="form-group">
                 <label for="image">Image</label>
-                <input type="file" class="form-control-file" id="image">
+                <input type="file" class="form-control-file" id="image" name="imageWorks">
               </div>
               <div class="form-group">
                 <label for="description">Description</label>
-                <textarea class="form-control" id="description" rows="3"></textarea>
+                <textarea class="form-control" id="description" rows="3" name="description"></textarea>
               </div>
               <div class="form-group">
-                <label for="type">Type</label>
-                <select class="form-control" id="type">
-                  <option>Option 1</option>
-                  <option>Option 2</option>
-                  <option>Option 3</option>
-                </select>
+                <label for="occupation">Occupation</label>
+                <input type="text" class="form-control-file" id="occupation" name="occupation">
               </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary" name="submitAddWorks">Add Works</button>
             </form>
           </div>
         </div>

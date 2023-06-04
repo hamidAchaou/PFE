@@ -49,6 +49,9 @@
   /* nav */
   .navbar {
     box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
   }
   
   .navbar .nav-item a{

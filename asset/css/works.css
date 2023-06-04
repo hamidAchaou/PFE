@@ -47,8 +47,9 @@
     z-index: 999;
   }
   
-  .jumbotron {
-    height: 300px;
+  .works {
+    height: 400px;
+    padding-top: 7%;
     background: url(../images/pexels-caio-64609.jpg) center center/cover;
   }
   
