@@ -20,5 +20,30 @@
       $worksProfessionals = $this->getOneWorks($professional);
       return $worksProfessionals;
     }
+
+    // get all data not confirmed
+    public function getWorksInfoNotConfirmed() {
+      $worksProfessionals = $this->getWorksNotConfirmed();
+      return $worksProfessionals;
+    }
+
+    // Update data confirmed posts
+    public function updateInfoConfirmedPosts($confirmed, $Id_Posts) {
+      $worksProfessionals = $this->updatePost($confirmed, $Id_Posts);
+      return $worksProfessionals;
+    }
+
+    // Delete data postrs
+    public function deleteWorksProfessionals($Id_Posts) {
+      $deletePostsProfessionals = $this->deletePosts($Id_Posts);
+      return $deletePostsProfessionals;
+    }
+
+    // delete Data liked posts 
+    public function deleteWorksProfessionalsLiked($Id_Posts) {
+      $deletePostsProfessionals = $this->deletePostsLiked($Id_Posts);
+      return $deletePostsProfessionals;
+    }
+
   }
 ?>

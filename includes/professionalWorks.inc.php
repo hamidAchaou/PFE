@@ -9,7 +9,7 @@ $worksInfo = new GetWorksData();
 $dataWorksProfessionals = $worksInfo->getWorksOneProfessionals($Id_Professionals);
 // echo $dataWorksProfessionals[0]['password']; 
 
-include_once "../../classes/professionals.contr.php";
+// include_once "../../classes/professionals.contr.php";
 
 // get professionals info 
 $infoProfessional = new GetProfessionalsData();
@@ -17,12 +17,12 @@ $infoOneProfessional = $infoProfessional->oneProfessionalsData($Id_Professionals
 ?>
 
 
-<div class="container my-profile">
+<div class="container my-profile mb-5">
     <div class="row">
         <div class="col-md-4">
             <div class="card">
                 <div class="card-body">
-                    <div class="profile-userpic">
+                    <div class="profile-userpic w-100 d-flex justifay-content-center">
                         <img src="../../asset//uploads/<?php echo $infoOneProfessional[0]['img_profile'] ?>" class="img-responsive" alt>
                     </div>
                     <div class="profile-usertitle">
@@ -43,10 +43,11 @@ $infoOneProfessional = $infoProfessional->oneProfessionalsData($Id_Professionals
                 <div class="card-body">
                     <div>
 
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Update Profile</a></li>
-                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">My works</a></li>
-                        </ul>
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li id="updateProfileTab" role="presentation" class="mr-4 border border-secondary  p-2 active text-light"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Update Profile</a></li>
+                        <li id="myWorksTab" role="presentation" class="border border-secondary p-2 text-light"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">My works</a></li>
+                    </ul>
+
 
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active pt-3" id="home">
@@ -76,8 +77,8 @@ $infoOneProfessional = $infoProfessional->oneProfessionalsData($Id_Professionals
                                     </div>
                                     <div class="row">
                                         <div class="form-group col">
-                                            <label for="inputPhone">Phone</label>
-                                            <input type="text" class="form-control" id="inputPhone" name="phone" value="<?php echo $infoOneProfessional[0]['phone_number'] ?>">
+                                            <label for="inputPhone">Phone Number</label>
+                                            <input type="text" class="form-control" id="inputPhone" name="phone_number" value="<?php echo $infoOneProfessional[0]['phone_number'] ?>">
                                         </div>
                                         <div class="form-group col">
                                             <label for="inputPassword">Password</label>
@@ -86,11 +87,29 @@ $infoOneProfessional = $infoProfessional->oneProfessionalsData($Id_Professionals
                                     </div>
                                     <div class="row">
                                         <div class="form-group col">
-                                            <label for="inputImgProfile">Profile Image</label>
-                                            <input type="file" class="form-control-file" id="inputImgProfile" name="img_profile">
+                                            <label for="inputPhone">city</label>
+                                            <input type="text" class="form-control" id="inputPhone" name="city" value="<?php echo $infoOneProfessional[0]['city'] ?>">
+                                        </div>
+                                        <div class="form-group col">
+                                            <label for="inputPassword">description</label>
+                                            <input type="texte" class="form-control" id="description" name="description" value="<?php echo $infoOneProfessional[0]['description'] ?>">
                                         </div>
                                     </div>
-                                    <button type="submit" name="submit" class="btn btn-primary">Update</button>
+                                    <div class="row">
+                                        <div class="form-group col">
+                                            <label for="inputImgProfile">Profile Image</label>
+                                            <input type="file" class="form-control-file" id="inputImgProfile" name="profile_image">
+                                        </div>
+                                        <div class="form-group col">
+                                            <label for="gender">Gender:</label>
+                                            <select id="gender" name="gender">
+                                                <option value="male">Male</option>
+                                                <option value="female">Female</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                    <button type="submit" name="uploadProfile" class="btn btn-primary">Update</button>
                                 </form>
                                 <!-- end from info Professional -->
 
@@ -100,51 +119,34 @@ $infoOneProfessional = $infoProfessional->oneProfessionalsData($Id_Professionals
                                 if ($dataWorksProfessionals == null) {
                                     echo '<h4 class="text-center">You have not added any works yet! </h4>';
                                 } else {
-                                    foreach ($dataWorksProfessionals as $worksData) { ?>
+                                    foreach ($dataWorksProfessionals as $worksData) {
+                                ?>
                                         <!-- card Posts Professional -->
-                                        <div class="container mb-4">
-                                            <div class="posts d-flex justify-content-center mx-auto">
-                                                <div class="card">
+                                        <div class="container mb-4 w-100">
+                                            <div class="posts d-flex justify-content-center mx-auto w-100">
+                                                <div class="card w-75 w-sm-100">
                                                     <div class="card-body content-posts m-sm-4 mt-0">
                                                         <h2 class="title-works text-center"><?php echo $worksData['title'] ?></h2>
                                                         <p class="pb-3"><?php echo $worksData['description'] ?></p>
-                                                        <img src="../../asset/images/pexels-andrea-piacquadio-3846262.jpg" alt="" srcset="">
+                                                        <img src="../../asset/uploads/<?php echo $worksData['img_posts'] ?>" alt="" srcset="">
                                                         <!-- <h3 class="w-100 d-flex justify-content-center pt-3"><i class="fa-regular fa-heart"></i></h3> -->
                                                     </div>
                                                     <div class="card-footer text-muted d-flex justify-content-center gap-5">
-                                                        <button type="button" class="btn btn-info" onclick="editProfessional(<?php echo $worksData['Id_Posts'] ?>);" name="edit" id="edit">Edit</button>
-                                                        <button type="button" class="btn btn-danger delete-btn" onclick="deleteProfessional(<?php echo $worksData['Id_Posts'] ?>);" data-toggle="modal" data-target="#exampleModal" data-cardid="<?php echo $worksData['Id_Posts'] ?>">Delete</button>
-
-
+                                                        <button type="button" class="btn btn-info" onclick="editProfessionalPosts(<?php echo $worksData['Id_Posts']  ?>)" data-toggle="modal" data-target="#editModal" data-id="<?php echo $professional['Id_Posts'] ?>">EDIT</button>
+                                                        <button type="button" class="btn btn-danger ml-3" onclick="deleteProfessionalPosts(<?php echo $worksData['Id_Posts']  ?>)" data-toggle="modal" data-target="#deleteModal" data-id="<?php echo $professional['Id_Posts'] ?>">DELETE</button>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                <?php }
+                                <?php
+                                    }
                                 }
                                 ?>
+                                <!-- include modal delete Posts Professionals -->
+                                <?php include_once "../../element/modal-DeletePostProfessional.php" ?>
+                                <!-- include modale edite  -->
+                                <?php include_once "../../element/modal-editPostsProfessiional.php" ?>
 
-                                <script type="text/javascript">
-                                    // function 
-                                    function deleteProfessional(id) {
-                                        $(document).ready(function() {
-                                            $.ajax({
-                                                //action
-                                                url: '../element/modalDeleteProfessional.php',
-                                                type: 'POST',
-                                                data: {
-                                                    id: id,
-                                                    action: "delete"
-                                                },
-                                                // success: function(response) {
-
-                                                // }
-                                            })
-                                        })
-                                    }
-                                </script>
-
-                                <?php include_once "../../element/modalDeleteProfessional.php" ?>
                             </div>
                         </div>
 
@@ -154,3 +156,5 @@ $infoOneProfessional = $infoProfessional->oneProfessionalsData($Id_Professionals
         </div>
     </div>
 </div>
+
+

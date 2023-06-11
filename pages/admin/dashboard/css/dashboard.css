@@ -1,0 +1,181 @@
+/*--------------------------------------------------------------
+# start cards proffi
+--------------------------------------------------------------*/
+.trainers {
+    padding-top: 1%;
+}
+
+.trainers h2 {
+    color: #000;
+    font-weight: 800;
+}
+
+.trainers p {
+    color: #000;
+    font-weight: 600;
+}
+
+.trainers .member {
+    text-align: center;
+    margin-bottom: 20px;
+    background: var(--white-color);
+    border: 1px solid #eef0ef;
+}
+
+.trainers .member img {
+    /* margin: -1px -1px 30px -1px; */
+    height: 283px;
+    width: 100%;
+    
+}
+
+.trainers .member .member-content {
+    padding: 0 20px 30px 20px;
+}
+
+.trainers .member h4 {
+    font-weight: 700;
+    margin-bottom: 2px;
+    font-size: 18px;
+}
+
+.trainers .member span {
+    font-style: italic;
+    display: block;
+    font-size: 13px;
+}
+
+.trainers .member p {
+    padding-top: 10px;
+    font-size: 14px;
+    font-style: italic;
+    color: #aaaaaa;
+}
+
+.trainers .member .social {
+    margin-top: 15px;
+}
+
+.trainers .member .social a {
+    color: #7e9486;
+    transition: 0.3s;
+}
+
+.trainers .member .social a:hover {
+    color: #5fcf80;
+}
+
+.trainers .member .social i {
+    font-size: 18px;
+    margin: 0 2px;
+}
+
+/* ==========================
+  #header
+  =============================== */
+.professionals {
+    height: 400px;
+    background: url(../images/2.jpg) center center/cover;
+}
+.professionals div {
+    padding-top: 8%;
+}
+  .professionals h1 {
+    font-weight: 600;
+    color: var(--primary-color);
+  }
+  .professionals h1 span {
+    color: var(--light-color);
+  }
+  .professionals p {
+    font-weight: 400;
+  }
+
+  .trainers .section-title h2 {
+    font-weight: 700;
+    color: #03a4ed;
+  }
+  .trainers .section-title p {
+    font-weight: 700;
+  }
+
+
+  .header-posts img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+  
+  .posts .header-posts .info-man-posts h4 {
+    color: black;
+    font-weight: 600;
+  }
+  
+  .posts .header-posts .info-man-posts h6 {
+    color: black;
+    font-weight: 600;
+  }
+  
+  .content-posts p {
+    color: #000;
+  }
+  
+  .content-posts img {
+    height: 260px;
+    width: 100%;
+  }
+  
+  .title-works {
+    color: #000;
+    font-weight: 400;
+  }
+  
+  .posts .card-footer {
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  
+  /* ====================================
+  # Works
+  =======================================*/
+  
+  .works {
+    height: 400px;
+    padding-top: 7%;
+    background: url(../images/pexels-caio-64609.jpg) center center/cover;
+  }
+  
+.card-professionals {
+  /* background-color: #eee; */
+}
+  
+  
+  
+  
+  
+  @media (min-width: 768px) {
+    /* Medium screens */
+    .card {
+      width: 75%;
+      margin-bottom: 4%;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    /* Large screens */
+    .card {
+      width: 50%;
+      margin-bottom: 4%;
+  
+    }
+  }
+  
+  @media (max-width: 767px) {
+    /* Small screens */
+    .card {
+      width: 100%;
+      margin: 5%;
+    }
+  }
+  

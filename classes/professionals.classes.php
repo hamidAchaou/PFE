@@ -1,7 +1,7 @@
 <?php  
 include_once "dbh.php";
 
-class GetProfessionals extends Dbh {
+class Professionals extends Dbh {
     
     // get All data professionals  
     protected function getProfessionalsInfo() {
@@ -74,4 +74,20 @@ class GetProfessionals extends Dbh {
     
         $stmt = null;
     }
+
+    // get data profesional by search in occupation and city
+    public function getProfessionalsByCityAndOccupation($city, $occupation) {
+        $query = "SELECT * FROM professionals WHERE city = :city AND occupation = :occupation";
+        $stmt = $this->connect()->prepare($query);
+        $stmt->bindParam(':city', $city);
+        $stmt->bindParam(':occupation', $occupation);
+        $stmt->execute();
+  
+        $professionals = [];
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+           $professionals[] = $row;
+        }
+  
+        return $professionals;
+     }
 }

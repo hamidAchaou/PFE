@@ -1,4 +1,13 @@
   <!--=================== start navvar ================================  -->
+
+  <?php
+  include_once "../../classes/professionals.contr.php"; // declaration classes contr Professionals
+
+  $Id_Professionals = $_SESSION['Id_Professionals']; // get id professional
+  // get professionals info 
+  $infoProfessional = new GetProfessionalsData();
+  $infoOneProfessional = $infoProfessional->oneProfessionalsData($Id_Professionals)
+  ?>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
       <a class="navbar-brand" href="#">
@@ -28,7 +37,7 @@
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" width="40" height="40" class="rounded-circle">
+                  <img src="../../asset//uploads/<?php echo $infoOneProfessional[0]['img_profile'] ?>" width="40" height="40" class="rounded-circle">
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="../user/profile.php">Profile</a>
@@ -66,18 +75,20 @@
                 <input type="text" class="form-control" id="title" name="title" placeholder="Enter title">
               </div>
               <div class="form-group">
-                <label for="image">Image</label>
-                <input type="file" class="form-control-file" id="image" name="imageWorks">
-              </div>
-              <div class="form-group">
-                <label for="description">Description</label>
+                <label for="description">Description For This Works</label>
                 <textarea class="form-control" id="description" rows="3" name="description"></textarea>
               </div>
               <div class="form-group">
-                <label for="occupation">Occupation</label>
+                <label for="occupation">Occupation for this Works</label>
                 <input type="text" class="form-control-file" id="occupation" name="occupation">
               </div>
-              <button type="submit" class="btn btn-primary" name="submitAddWorks">Add Works</button>
+              <div class="form-group">
+                <label for="image">Image</label>
+                <input type="file" class="form-control-file" id="image" name="imageWorks">
+              </div>
+              <div class="d-flex justify-content-end">
+                <button type="submit" class="btn btn-primary" name="submitAddWorks">Add Works</button>
+              </div>
             </form>
           </div>
         </div>

@@ -15,7 +15,7 @@ $dataWorksProfessionals = $worksInfo->getWorksProfessionalsRand();
             <p>Discover some of our professionals' work</p>
         </div>
 
-        <div class="row pt-4 data-aos=" zoom-in" data-aos-delay="100">
+        <div class="w-100 row pt-4 data-aos=" zoom-in" data-aos-delay="100">
 
 
             <?php
@@ -23,9 +23,9 @@ $dataWorksProfessionals = $worksInfo->getWorksProfessionalsRand();
             ?>
 
 
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0 card-professionals">
-                    <div class="course-item text-center">
-                        <img src="../../asset/uploads/<?php  echo $worksData[0]["img_posts"] ?>" class="img-fluid img-work" alt="...">
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0 card-professionals w-100">
+                    <div class="course-item text-center w-100">
+                        <img src="../../asset/uploads/<?php echo $worksData["img_posts"] ?>" class="img-fluid img-work w-100" alt="...">
                         <div class="course-content">
                             <div class="d-flex justify-content-between align-items-center mb-3">
                                 <h4><?php echo $worksData['occupation'] ?></h4>

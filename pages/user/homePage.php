@@ -55,11 +55,11 @@
                         <div class="col-lg-10 offset-lg-1">
                           <h1 class="display-4 font-weight-bold">Looking for the best <br><span>craftsmen</span></h1>
                           <p class="font-italic mb-5">This site provides you with the best professionals for your business</p>
-                          <form id="subscribe" action="" method="get">
-                            <input type="text" name="city" id="city" placeholder="your city">
-                            <input type="text" name="occupation" id="occupation" placeholder="Your occupation">
-                            <button type="submit" id="form-submit" class="main-button ">Search</button>
-                          </form>
+                          <div  id="subscribe">
+                            <a href="Professionals.php">
+                              <button type="submit" id="form-submit" class="main-button" name="btn-search">Search</button>
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -72,21 +72,21 @@
     </div>
     <!-- ==================== end header ============================= -->
 
-    <!-- ====================== start Professionals ===========================-->
-      <?php include "../../includes/homePage/professionalsHomePage.inc.php" ?>
-    <!-- ====================== end Professionals ===========================-->
+    <!-- ====================== start get Professionals ===========================-->  
+      <?php include "../../includes/homePage/professionalsHomePage.inc.php" ?> 
+    <!-- ====================== end get Professionals ===========================-->
 
-    <!--===================== start works   =================================-->
+    <!--===================== start get works   =================================-->
         <?php include "../../includes/homePage/works-professionalsHomePage.inc.php" ?>
-    <!--===================== End Works =====================-->
+    <!--===================== End get Works =====================-->
 
-    <!--===================== start contact =================== -->
+    <!--===================== start get contact =================== -->
       <?php include "../../element/homePages/contactHomePage.php" ?>
-    <!-- ==================== end contact ===================== -->
+    <!-- ==================== end get contact ===================== -->
 
-    <!-- =================== start footer ====================-->
+    <!-- =================== start get footer ====================-->
       <?php include "../../element/footer.php" ?>
-    <!--=================== End Footer ==========================-->
+    <!--=================== End get Footer ==========================-->
 
   <!-- link js -->
   <script src="../asset/JavaScript/homePage.js"></script>

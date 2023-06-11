@@ -23,9 +23,7 @@ class AddWorks extends WorksInfo {
     public function addPosts() {
 
         $this->addWorks($this->title, $this->description, $this->date_created, $this->occupation, $this->img_posts, $this->confirmed, $this->Id_Professionals);
-      }
-    
-
+    }    
 
 }
 ?>

@@ -1,12 +1,11 @@
 <?php
 include "../../classes/works.contr.php";
+include_once "../../classes/professionals.contr.php";
 
 $Id_Professionals = $_GET['Id_Professionals'];
-// echo $Id_Professionals;
-
-$worksInfo = new GetWorksData();
-$dataWorksProfessionals = $worksInfo->getWorksOneProfessionals($Id_Professionals);
-echo $dataWorksProfessionals[0]["first_name"];
+// get one professional 
+$professional = new GetProfessionalsData();
+$dataProfessional = $professional->oneProfessionalsData($Id_Professionals);
 ?>
 
 <div class="container my-profile">
@@ -14,7 +13,7 @@ echo $dataWorksProfessionals[0]["first_name"];
         <div class="col-md-4">
             <div class="portlet light profile-sidebar-portlet bordered">
                 <div class="profile-userpic mb-0">
-                    <img src="../../asset/uploads/<?php echo $dataWorksProfessionals[0]["img_profile"] ?>" class="img-responsive" alt>
+                    <img src="../../asset/uploads/<?php echo $dataProfessional[0]['img_profile'] ?>" class="img-responsive" alt>
                 </div>
                 <div class="rating">
                     <input type="radio" name="rating" value="5" id="5">
@@ -29,12 +28,12 @@ echo $dataWorksProfessionals[0]["first_name"];
                     <label for="1">☆</label>
                 </div>
                 <div class="profile-usertitle mt-0">
-                    <div class="profile-usertitle-name"><?php echo $dataWorksProfessionals[0]["first_name"] . " " . $dataWorksProfessionals[0]["last_name"] ?></div>
-                    <div class="profile-usertitle-job"><?php echo $dataWorksProfessionals[0]['occupation'] ?></div>
+                    <div class="profile-usertitle-name"><?php echo $dataProfessional[0]['first_name'] . " " . $dataProfessional[0]['last_name']?></div>
+                    <div class="profile-usertitle-job"><?php echo $dataProfessional[0]['occupation'] ?></div>
                 </div>
                 <div class="container info-contact">
-                    <h2 class="card"><i class="fa-solid fa-phone-volume"> </i> <span><?php echo $dataWorksProfessionals[0]['phone_number'] ?></span></h2><br>
-                    <h2 class="card"><i class="fa-solid fa-envelope"> </i> <span><?php echo $dataWorksProfessionals[0]['email'] ?></span></h2>
+                    <h2 class="card"><i class="fa-solid fa-phone-volume"> </i> <span><?php echo $dataProfessional[0]['phone_number'] ?></span></h2><br>
+                    <h2 class="card"><i class="fa-solid fa-envelope"> </i> <span><?php echo $dataProfessional[0]['email'] ?></span></h2>
                 </div>
             </div>
         </div>
@@ -59,7 +58,16 @@ echo $dataWorksProfessionals[0]["first_name"];
 
                                     <!-- display card Works Professional -->
                                     <?php
-                                    foreach ($dataWorksProfessionals as $worksData) {
+
+                                    // get professional and works professionals
+                                    $worksInfo = new GetWorksData();
+                                    $dataWorksProfessionals = $worksInfo->getWorksOneProfessionals($Id_Professionals);
+                                    // echo $dataWorksProfessionals[0]["first_name"];
+
+                                    if ($dataWorksProfessionals == null) {
+                                        echo '<h4 class="text-center">You have not added any works yet! </h4>';
+                                    } else {
+                                      foreach ($dataWorksProfessionals as $worksData) {
                                     ?>
 
                                         <!-- card wPosts Professional -->
@@ -87,7 +95,8 @@ echo $dataWorksProfessionals[0]["first_name"];
                                         </div>
 
                                     <?php
-                                    } // End Foreach
+                                      } // End Foreach
+                                    } // End else
                                     ?>
 
                                 </div>

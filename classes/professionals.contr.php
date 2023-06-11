@@ -1,7 +1,7 @@
 <?php  
 include "professionals.classes.php";
 
-class GetProfessionalsData extends GetProfessionals {
+class GetProfessionalsData extends Professionals {
 
     public function getprofessionals() {
         $professionalsData = $this->getprofessionalsInfo();
@@ -16,6 +16,11 @@ class GetProfessionalsData extends GetProfessionals {
     public function oneProfessionalsData($Id_Professionals) {
         $oneProfessionalsData = $this->getOneProfessionals($Id_Professionals);
         return $oneProfessionalsData; 
+    }
+
+    public function searchByCityAndOccupation($city, $occupation) {
+        $getProfessionals = $this->getProfessionalsByCityAndOccupation($city, $occupation);
+        return $getProfessionals;
     }
 }
 

@@ -2,7 +2,7 @@
 
 include "professionals.classes.php";
 
-class UpdateProfessionalInfo extends GetProfessionals
+class UpdateProfessionalInfo extends Professionals
 {
   private $Id_Professionals;
   private $first_name;

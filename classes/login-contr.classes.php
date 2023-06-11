@@ -13,13 +13,6 @@ class loginContr extends login {
   public function loginUser() {
     if ($this->emptyInput() == false) {
       // echo "invalid emptyinput"
-      echo '<script>Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: "Something went wrong!",
-            footer: "<a href="">Why do I have this issue?</a>"
-          })
-          </script>';
       header("location: ../loginSignUp.php?erer=emptyinput");
       exit();
     }

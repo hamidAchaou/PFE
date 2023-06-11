@@ -1,5 +1,5 @@
 <?php
-include "../../classes/professionals.contr.php";
+// include "../../classes/professionals.contr.php";
 
 $prfessionalsInfo = new GetProfessionalsData();
 $dataProfessionals = $prfessionalsInfo->professionalsDataRand();
@@ -21,7 +21,7 @@ $dataProfessionals = $prfessionalsInfo->professionalsDataRand();
         ?>
             <!-- card Professionals -->
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4 card-professionals">
-                <div class="card member">
+                <div class="card member w-100">
                     <img src="../../asset/uploads/<?php echo $professionnal['img_profile'] ?>" class="card-img-top" alt="">
                     <div class="card-body member-content">
                         <h3 class="card-title"><?php echo $professionnal["first_name"] . " " . $professionnal["last_name"] ?></h3>

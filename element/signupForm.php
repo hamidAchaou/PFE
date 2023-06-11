@@ -15,7 +15,38 @@
     </div>
     <div class="form-group">
         <label for="city">City</label> 
-        <input type="text" id="city" name="city" class="form-control" required>
+        <select class="form-control" id="city" name="city">
+
+        <?php
+            $cities = array(
+                "Casablanca",
+                "Rabat",
+                "Fes",
+                "Marrakech",
+                "Agadir",
+                "Tangier",
+                "Meknes",
+                "Oujda",
+                "Kenitra",
+                "Tetouan",
+                "Safi",
+                "Laayoune",
+                "Nador",
+                "Khouribga",
+                "Beni Mellal",
+                "Taza",
+                "Settat",
+                "El Jadida",
+                "Khouribga",
+                "Boujniba"
+            );
+
+            foreach ($cities as $city) {
+                echo "<option>$city</option>";
+            }
+            echo "</ul>";
+            ?>
+        </select>
     </div>
     <div class="form-group">
         <label for="phone-number">Phone Number</label>

@@ -77,9 +77,6 @@
     height: 400px;
     background: url(../images/2.jpg) center center/cover;
 }
-.professionals div {
-    padding-top: 8%;
-}
   .professionals h1 {
     font-weight: 600;
     color: var(--primary-color);
@@ -98,3 +95,73 @@
   .trainers .section-title p {
     font-weight: 700;
   }
+
+
+  /*  .inner-content:after {
+    content: '';
+    background-image: url(../images/subscribe-dec.png);
+    position: absolute;
+    width: 195px;
+    height: 138px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    right: -20px;
+    top: -20px;
+  } */
+  
+  /*  .inner-content h1 {
+    color: var(--main-color);
+  }
+   .inner-content h1 span{
+    /* color: var(--secondary-color); */
+  /* }  */
+  
+   .inner-content form {
+    width: 100%;
+    height: 80px;
+    border-radius: 15px;
+    background-color: #fff;
+  }
+  
+   .inner-content form input {
+    width: 38.5%;
+    margin-top: 20px;
+    line-height: 40px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0px 20px;
+    font-size: 15px;
+    color: #2a2a2a;
+  }
+  
+   .inner-content form input#website {
+    border-right: 1px solid #eee;
+  }
+  
+   .inner-content form input::placeholder {
+    color: #afafaf;
+  }
+  
+   .inner-content form button {
+    display: inline-block;
+    background-color: #03a4ed;
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+    width: 20%;
+    margin-right: 10px;
+    text-transform: capitalize;
+    padding: 12px 20px;
+    border-radius: 15px;
+    letter-spacing: 0.25px;
+    border: none;
+    text-align: center;
+    transition: all .3s;
+  }
+  
+   .inner-content form button:hover {
+    background-color: #ff695f;
+  }
+  
+  

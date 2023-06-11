@@ -45,7 +45,7 @@
 
 
   <!--=================== start profile ================================  -->
-    <?php include "../../element/profile.php" ?>
+    <?php include "../../includes/professionalWorks.inc.php" ?>
   <!--=================== end navvar ================================  -->
 
     <!--=================== start footer ================================  -->

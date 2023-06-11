@@ -47,8 +47,7 @@
     <!--=================== end header ================================  -->
 
     <!--=================== start posts Works ================================  -->
-    <?php
-    include "../../includes/works.inc.php" ?>
+    <?php include "../../includes/works.inc.php" ?>
     <!--=================== start Posts Works ================================  -->
 
 

@@ -23,7 +23,22 @@ if (isset($_POST['loginSubmit'])) {
     // header('Access-Control-Allow-Headers: Content-Type');
 
     // echo json_encode($login);
-}
+} elseif (isset($_POST['clientLoginSubmit'])) {
+    $email = $_POST['emailLogin'];
+    $password = $_POST['loginPassword'];
+
+    echo $password;
+
+  
+    // instantiate loginContr class
+    include "../classes/client-login.contr.php";
+  
+    $login = new loginContr($email, $password);
+    $login->loginClient();
+
+    header('location: ../pages/user/homePage.php');
+
+  }
 
 
 ?>

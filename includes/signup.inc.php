@@ -20,6 +20,20 @@
         $signUp = new signupContr($first_name, $last_name, $email, $password, $date_created, $city, $phone_number, $date_of_birth, $gender, $occupation, $description);
 
         $signUp->signupUser();
+    } elseif (isset($_POST['signupClient'])) {
+        $first_name = $_POST['first_name'];
+        $last_name = $_POST['last_name'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $gender = $_POST['gender'];
+
+
+
+        include_once "../classes/client-signup.contr.classes.php";
+
+        $signUp = new SignupContrClient($first_name, $last_name, $email, $password, $gender);
+
+        $signUp->signupClient();
     }
 
 
