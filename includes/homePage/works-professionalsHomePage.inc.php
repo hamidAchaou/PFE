@@ -35,9 +35,19 @@ $dataWorksProfessionals = $worksInfo->getWorksProfessionalsRand();
                             <h3><a href="course-details.html"><?php echo $worksData['title'] ?></a></h3>
                             <p><?php echo $worksData['description'] ?></p>
                             <div class="trainer d-flex justify-content-between align-items-center">
-                                <div class="trainer-profile d-flex align-items-center">
+                                <div class="trainer-profile d-flex align-items-center row">
                                     <img src="../../asset/uploads/<?php echo $worksData['img_profile'] ?>" class="img-fluid" alt="">
-                                    <span><?php echo $worksData['first_name'] . " " . $worksData['last_name'] ?></span>
+                                    <div class="rating mt-4">
+                                        <span><?php echo $worksData['first_name'] . " " . $worksData['last_name'] ?></span>
+                                        <?php
+                                        //   get num rating for Professionals
+                                        include_once "../../classes/get-numRating.contr.php";
+                                        $numRating = new RatingController($professionnal["Id_Professionals"]);
+                                        $num_ratings = $numRating->getRatingProfessionals();
+                                        // var_dump($ratingProfessional);
+                                        ?>
+                                        <p class="text-warning"><i class="fas fa-star"></i> <?php echo $num_ratings ?></p>
+                                    </div>
                                 </div>
                                 <div class="trainer-rank d-flex align-items-center">
                                     <i class="fa-solid fa-heart"></i>&nbsp;35

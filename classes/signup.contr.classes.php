@@ -8,6 +8,7 @@ class signupContr extends signup
   private $last_name;
   private $email;
   private $password;
+  private $repeatPass;
   private $date_created;
   private $city;
   private $phone_number;
@@ -16,12 +17,13 @@ class signupContr extends signup
   private $occupation;
   private $description;
 
-  public function __construct($first_name, $last_name, $email, $password, $date_created, $city, $phone_number, $date_of_birth, $gender, $occupation, $description)
+  public function __construct($first_name, $last_name, $email, $password, $repeatPass, $date_created, $city, $phone_number, $date_of_birth, $gender, $occupation, $description)
   {
     $this->first_name = $first_name;
     $this->last_name = $last_name;
     $this->email = $email;
     $this->password = $password;
+    $this->repeatPass = $repeatPass;
     $this->date_created = $date_created;
     $this->city = $city;
     $this->phone_number = $phone_number;
@@ -33,14 +35,20 @@ class signupContr extends signup
 
   public function signupUser() {
 
-    if ($this->emailTakenCheack() == false) {
-      header("location: ../pages/user/loginSignUp.php?erer=emailMatch");
+
+    if ($this->passMatch() == false) {
+      header("location: ../pages/loginSignUp.php?error=passMatch");
       exit();
     }
 
+    if ($this->emailTakenCheack() == false) {
+      header("location: ../pages/loginSignUp.php?error=emailMatch");
+      exit();
+    } 
+
     if ($this->invalidEmail() == false) {
       // echo "invalid Email"
-      header("location: ../index.php?erer=Email");
+      header("location: ../index.php?error=Email");
       exit();
     }
 
@@ -68,14 +76,14 @@ class signupContr extends signup
     }
   }
 
-    // // cheack password and confPassword
-    // private function passMatch() {
-    //   if ($this->pass !== $this->repeatPass) {
-    //     return false;
-    //   } else {
-    //     return true;
-    //   }
-    // }
+    // cheack password and confPassword
+    private function passMatch() {
+      if ($this->password !== $this->repeatPass) {
+        return false;
+      } else {
+        return true;
+      }
+    }
 
 }
 

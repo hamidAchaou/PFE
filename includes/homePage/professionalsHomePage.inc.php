@@ -16,8 +16,8 @@ $dataProfessionals = $prfessionalsInfo->professionalsDataRand();
     <div class="pl-5 pr-5 row justify-content-center w-100 m-0" data-aos="fade-up">
 
         <!-- display card Professionals  -->
-        <?php        
-          foreach ($dataProfessionals as $professionnal) :
+        <?php
+        foreach ($dataProfessionals as $professionnal) :
         ?>
             <!-- card Professionals -->
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4 card-professionals">
@@ -25,28 +25,28 @@ $dataProfessionals = $prfessionalsInfo->professionalsDataRand();
                     <img src="../../asset/uploads/<?php echo $professionnal['img_profile'] ?>" class="card-img-top" alt="">
                     <div class="card-body member-content">
                         <h3 class="card-title"><?php echo $professionnal["first_name"] . " " . $professionnal["last_name"] ?></h3>
+                        <!-- get num rating of Professional -->
+                        <div class="rating">
+                            <?php
+                            //   get num rating for Professionals
+                            include_once "../../classes/get-numRating.contr.php";
+                            $numRating = new RatingController($professionnal["Id_Professionals"]);
+                            $num_ratings = $numRating->getRatingProfessionals();
+                            // var_dump($ratingProfessional);
+                            ?>
+                            <p class="text-warning"><i class="fas fa-star"></i> <?php echo $num_ratings ?></p>
+                        </div>
                         <p class="card-text"><?php echo $professionnal["occupation"] ?></p>
                         <p><?php echo $professionnal["description"] ?></p>
                         <div class="social">
-                        <a href="infoProfessionals.php?Id_Professionals=<?php echo $professionnal["Id_Professionals"] ?>" type="button" class="btn btn-primary">Profile</a>
+                            <a href="infoProfessionals.php?Id_Professionals=<?php echo $professionnal["Id_Professionals"] ?>" type="button" class="btn btn-primary">Profile</a>
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
         <?php
-          endforeach;
+        endforeach;
         ?>
     </div>
 </section>
 
-
-<?php
-
-// header('Access-Control-Allow-Origin: *');
-// header('Access-Control-Allow-Methods: GET, POST');
-// header('Access-Control-Allow-Headers: Content-Type');
-
-// echo json_encode($dataProfessionals);
-
-// var_dump($dataProfessionals)
-?>

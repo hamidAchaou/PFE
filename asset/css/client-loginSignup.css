@@ -68,7 +68,10 @@ input {
       color: var(--primary);
   }
 }
-
+.msg-errore {
+  background-color: #441919;
+  font-weight: 700;
+}
 .form-group, p {
   color: var(--white-color);
 }

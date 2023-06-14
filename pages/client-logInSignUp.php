@@ -36,6 +36,7 @@
                 <div>
                     <h2>Welcom in your<br> <span>sit web</span></h2>
                     <h3>Create your account for more ease of use</h3>
+                    <a href="./user/homePage.php" class="btn btn-primary">Back HomePage</a>
                 </div>
             </div>
             <!-- form sign up -->

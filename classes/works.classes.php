@@ -53,6 +53,7 @@ class WorksInfo extends Dbh {
         }
 
         $stmt = null;
+        header("location: ../pages/user/works.php?addWorks=success");
     }
 
         // Get all data works professionals not confirmed

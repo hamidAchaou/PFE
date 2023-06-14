@@ -6,6 +6,7 @@ $Id_Professionals = $_GET['Id_Professionals'];
 // get one professional 
 $professional = new GetProfessionalsData();
 $dataProfessional = $professional->oneProfessionalsData($Id_Professionals);
+
 ?>
 
 <div class="container my-profile">
@@ -15,20 +16,48 @@ $dataProfessional = $professional->oneProfessionalsData($Id_Professionals);
                 <div class="profile-userpic mb-0">
                     <img src="../../asset/uploads/<?php echo $dataProfessional[0]['img_profile'] ?>" class="img-responsive" alt>
                 </div>
+
+                <?php
+                    if(isset($_SESSION['Id_client'])) {
+                ?>
                 <div class="rating">
-                    <input type="radio" name="rating" value="5" id="5">
-                    <label for="5">☆</label>
-                    <input type="radio" name="rating" value="4" id="4">
-                    <label for="4">☆</label>
-                    <input type="radio" name="rating" value="3" id="3">
-                    <label for="3">☆</label>
-                    <input type="radio" name="rating" value="2" id="2">
-                    <label for="2">☆</label>
-                    <input type="radio" name="rating" value="1" id="1">
-                    <label for="1">☆</label>
+                    <form action="../../includes/submit_rating.inc.php" method="post">
+                        <input type="hidden" name="Id_Professionals" value="<?php echo $Id_Professionals ?>">
+                        <div class="rating">
+                            <input type="radio" name="rating" value="5" id="5">
+                            <label for="5">☆</label>
+                            <input type="radio" name="rating" value="4" id="4">
+                            <label for="4">☆</label>
+                            <input type="radio" name="rating" value="3" id="3">
+                            <label for="3">☆</label>
+                            <input type="radio" name="rating" value="2" id="2">
+                            <label for="2">☆</label>
+                            <input type="radio" name="rating" value="1" id="1">
+                            <label for="1">☆</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
                 </div>
+                <?php
+                    } else {
+                ?>
+                <div class="rating">
+                    <?php
+                    //   get num rating for Professionals
+                    include_once "../../classes/get-numRating.contr.php";
+                    $numRating = new RatingController($dataProfessional[0]["Id_Professionals"]);
+                    $num_ratings = $numRating->getRatingProfessionals();
+                    // var_dump($ratingProfessional);
+                    ?>
+                    <p class="text-warning h3"><i class="fas fa-star"></i> <?php echo $num_ratings ?></p>
+                </div>
+                <?php
+                    }
+                ?>
+
+
                 <div class="profile-usertitle mt-0">
-                    <div class="profile-usertitle-name"><?php echo $dataProfessional[0]['first_name'] . " " . $dataProfessional[0]['last_name']?></div>
+                    <div class="profile-usertitle-name"><?php  echo $dataProfessional[0]['first_name'] . " " . $dataProfessional[0]['last_name'] ?></div>
                     <div class="profile-usertitle-job"><?php echo $dataProfessional[0]['occupation'] ?></div>
                 </div>
                 <div class="container info-contact">
@@ -67,35 +96,42 @@ $dataProfessional = $professional->oneProfessionalsData($Id_Professionals);
                                     if ($dataWorksProfessionals == null) {
                                         echo '<h4 class="text-center">You have not added any works yet! </h4>';
                                     } else {
-                                      foreach ($dataWorksProfessionals as $worksData) {
+                                        foreach ($dataWorksProfessionals as $worksData) {
                                     ?>
 
-                                        <!-- card wPosts Professional -->
-                                        <div class="container">
-                                            <div class="posts d-flex justify-content-center mx-auto">
-                                                <div class="card">
-                                                    <div class="card-header d-flex header-posts ">
-                                                        <img src="../../asset/images/man-2.jpg" alt="">
-                                                        <div class="info-man-posts ml-3">
-                                                            <h4><?php echo $worksData['first_name'] . " " . $worksData['last_name'] ?></h4>
-                                                            <h6><?php echo $worksData['occupation'] ?></h6>
+                                            <!-- card wPosts Professional -->
+                                            <div class="container">
+                                                <div class="posts d-flex justify-content-center mx-auto">
+                                                    <div class="card">
+                                                        <div class="card-header d-flex header-posts ">
+                                                            <img src="../../asset/images/man-2.jpg" alt="">
+                                                            <div class="info-man-posts ml-3">
+                                                                <h4><?php echo $worksData['first_name'] . " " . $worksData['last_name'] ?></h4>
+                                                                <h6><?php echo $worksData['occupation'] ?></h6>
+                                                                <div class="rating">
+                                                                <?php
+                                                                //   get num rating for Professionals
+                                                                include_once "../../classes/get-numRating.contr.php";
+                                                                $numRating = new RatingController($worksData["Id_Professionals"]);
+                                                                $num_ratings = $numRating->getRatingProfessionals();
+                                                                // var_dump($ratingProfessional);
+                                                                ?>
+                                                                <p class="text-warning h5"><i class="fas fa-star"></i> <?php echo $num_ratings ?></p>
+                                                            </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="card-body content-posts m-sm-4 mt-0">
-                                                        <h2 class="title-works text-center"><?php echo $worksData['title'] ?></h2>
-                                                        <p class="pb-3"><?php echo $worksData['description'] ?></p>
-                                                        <img src="../../asset/images/pexels-andrea-piacquadio-3846262.jpg" alt="" srcset="">
-                                                        <!-- <h3 class="w-100 d-flex justify-content-center pt-3"><i class="fa-regular fa-heart"></i></h3> -->
-                                                    </div>
-                                                    <div class="card-footer text-muted">
-                                                        <i class="fa-regular fa-heart"></i>
+                                                        <div class="card-body content-posts m-sm-4 mt-0">
+                                                            <h2 class="title-works text-center"><?php echo $worksData['title'] ?></h2>
+                                                            <p class="pb-3"><?php echo $worksData['description'] ?></p>
+                                                            <img src="../../asset/images/pexels-andrea-piacquadio-3846262.jpg" alt="" srcset="">
+                                                            <!-- <h3 class="w-100 d-flex justify-content-center pt-3"><i class="fa-regular fa-heart"></i></h3> -->
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
 
                                     <?php
-                                      } // End Foreach
+                                        } // End Foreach
                                     } // End else
                                     ?>
 
@@ -109,4 +145,44 @@ $dataProfessional = $professional->oneProfessionalsData($Id_Professionals);
         </div>
     </div>
 </div>
-</div>
+
+<?php
+// get rating for this professional
+include_once "../../classes/rating.classes.php";
+$rating = new Rating();
+$averageRating = $rating->getAverageRating($Id_Professionals);
+
+if ($averageRating != null) {
+    echo '<div class="container my-5">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Average Rating:</h5>
+                    <p class="card-text">' . $averageRating . '</p>
+                </div>
+            </div>
+        </div>';
+}
+?>
+
+<script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        fetch(form.action, {
+                method: form.method,
+                body: data
+            })
+            .then(response => {
+                if (response.ok) {
+                    // show thank you message or redirect to thank you page
+                    console.log('Thank you for rating!');
+                } else {
+                    console.error('Error submitting rating');
+                }
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    });
+</script>

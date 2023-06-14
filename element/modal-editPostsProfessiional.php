@@ -53,4 +53,9 @@
         document.getElementById("idPostsForEdit").value = id;
          $('#editModal').modal('show'); 
     }
+
+    // function editProfessionalPosts(id) {
+    // var inputElement = document.getElementById("idPostsFo");
+    // inputElement.value = id;
+    // }
 </script>

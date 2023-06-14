@@ -1,11 +1,21 @@
 <?php
-    include "../../classes/likedPost.classes.php";
+include "../../classes/likedPost.classes.php";
 
-    class GetLikedPost extends Liked {
+class GetLikedPost extends Liked {
 
-        public function getLikedPost($Id_Posts) {
-            $this->getLikedPosts($Id_Posts);
-        }
+    public function hasLikedPost($postId, $clientId) {
+        return $this->likedPostExists($postId, $clientId);
     }
+
+    public function getNumLikes($postId) {
+        return $this->countLikes($postId);
+    }
+
+    // Add likes in table liked 
+    public function addLikes($postId, $clientId) {
+        return $this->setLikedPost($postId, $clientId);
+    }
+
+}
 
 ?>

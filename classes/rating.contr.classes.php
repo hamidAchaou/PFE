@@ -1,4 +1,5 @@
 <?php
+include_once "rating.classes.php";
 class RatingController extends Rating {
     private $Id_Professionals;
     private $Id_client;
@@ -15,6 +16,7 @@ class RatingController extends Rating {
         $this->addRating($this->Id_Professionals, $this->Id_client, $this->num_rating,);
         // header("Location: /item/$item_id");
     }
+    
 }
 
 ?>

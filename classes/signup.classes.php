@@ -16,6 +16,7 @@ class signup extends Dbh {
         }
 
         $stmt = null;
+        header("location: ../pages/logInSignUp.php?signUp=success");
     }
 
     // select email for check Professional email
@@ -36,28 +37,29 @@ class signup extends Dbh {
     }
 
         // Sign up Client
-        protected function setClient($first_name, $last_name, $email, $password, $gender) {
+        protected function setClient($first_name, $last_name, $email, $phone_number, $password, $gender) {
     
-          $stmt = $this->connect()->prepare("INSERT INTO client (first_name, last_name, email, password, gender) VALUES (?, ?, ?, ?, ?)");
+          $stmt = $this->connect()->prepare("INSERT INTO clients (first_name, last_name, email, phone_number, password, gender) VALUES (?, ?, ?, ?, ?, ?)");
           
           $hashedpass = password_hash($password, PASSWORD_DEFAULT);
   
-          if (!$stmt->execute(array($first_name, $last_name, $email, $hashedpass, $gender))) {
+          if (!$stmt->execute(array($first_name, $last_name, $email, $phone_number, $hashedpass, $gender))) {
           $stmt = null;
           header("location: http://localhost/PFE/KhedmaPro/pages/client-logInSignUp.php?erer=stmtfailed");
           exit();
           }
-  
+
           $stmt = null;
+          header("location: ../pages/client-logInSignUp.php?signUp=success");
       }
 
       // select email for check Client
       protected function checkEmailClient($email) {
-        $stmt = $this->connect()->prepare('SELECT email FROM client WHERE Email = ?;');
+        $stmt = $this->connect()->prepare('SELECT email FROM clients WHERE Email = ?;');
     
         if (!$stmt->execute(array($email))) {
           $stmt = null;
-          header("location: ../pages/user/client-logInSignUp.php?erer=stmtfailed");
+          header("location: ../pages/client-logInSignUp.php?erer=stmtfailed");
           exit();
         }
     

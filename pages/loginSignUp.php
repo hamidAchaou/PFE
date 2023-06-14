@@ -27,9 +27,14 @@
 <body>
 
     <main class="w-100" id="main-login">
-        <div class="d-flex log container mt-5">
+        <div class="d-flex log container mt-4 my-4">
             <!-- Comment Form Start -->
-            <div class="rounded p-5 w-50" id="header-login">
+            <div class="rounded rounded-sidbare text-light p-5 w-50 d-flex justify-content-center align-items-center" id="header-login">
+                <div>
+                    <h2>Welcom in your<br> <span>sit web</span></h2>
+                    <h3>Create your account and share your best work in order to make it easier for customers to identify you</h3>
+                    <a href="./user/homePage.php" class="btn btn-primary">Back a HomePage</a>
+                </div>
             </div>
             <!-- form sign up -->
             <div class="rounded p-5 w-75 signupForm" id="form-login">

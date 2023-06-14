@@ -27,18 +27,33 @@ if (isset($_POST['loginSubmit'])) {
     $email = $_POST['emailLogin'];
     $password = $_POST['loginPassword'];
 
-    echo $password;
-
-  
     // instantiate loginContr class
-    include "../classes/client-login.contr.php";
+    include_once "../classes/client-login.contr.php";
   
-    $login = new loginContr($email, $password);
-    $login->loginClient();
+    $login = new LoginContr($email, $password);
+    $clientData = $login->loginClient();
 
-    header('location: ../pages/user/homePage.php');
+    echo $clientData['password'];
 
-  }
+    var_dump($clientData);
 
+    print_r($clientData);
+
+
+    if (!$clientData) {
+        // User not found
+        header("location: ../pages/client-loginSignUp.php?error=usernotfoundEmail");
+        exit();
+    } else {
+        // Login successful
+        session_start();
+        $_SESSION['firs_name'] = $clientData["first_name"];
+        $_SESSION['last_name'] = $clientData["last_name"];
+        $_SESSION['Id_client'] = $clientData["Id_client"];
+        $_SESSION['occupation'] = $clientData["occupation"];
+        header('location: ../pages/user/homePage.php?login=success');
+        exit();
+    }
+}
 
 ?>
