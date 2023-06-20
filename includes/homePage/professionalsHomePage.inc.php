@@ -19,31 +19,43 @@ $dataProfessionals = $prfessionalsInfo->professionalsDataRand();
         <?php
         foreach ($dataProfessionals as $professionnal) :
         ?>
-            <!-- card Professionals -->
+            <!-- Card Professionals -->
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4 card-professionals">
-                <div class="card member w-100">
-                    <img src="../../asset/uploads/<?php echo $professionnal['img_profile'] ?>" class="card-img-top" alt="">
-                    <div class="card-body member-content">
-                        <h3 class="card-title"><?php echo $professionnal["first_name"] . " " . $professionnal["last_name"] ?></h3>
-                        <!-- get num rating of Professional -->
+                <div class="card member">
+                <img src="../../asset/uploads/<?php echo $professionnal['img_profile'] ?>" class="card-img-top img-profile" alt="" style="position: relative;">            <div class="card-body member-content">
+                    <h3 class="card-title"><?php echo $professionnal["first_name"] . $professionnal["last_name"] ?></h3>
+
                         <div class="rating">
                             <?php
-                            //   get num rating for Professionals
+                            // Get the number of ratings for professionals
                             include_once "../../classes/get-numRating.contr.php";
                             $numRating = new RatingController($professionnal["Id_Professionals"]);
                             $num_ratings = $numRating->getRatingProfessionals();
-                            // var_dump($ratingProfessional);
+
+                            // Draw stars based on the number of ratings
+                            for ($i = 1; $i <= 5; $i++) {
+                                if ($i <= $num_ratings) {
+                                    echo '<i class="fas fa-star text-warning"></i>';
+                                } else {
+                                    echo '<i class="far fa-star"></i>';
+                                }
+                            }
                             ?>
-                            <p class="text-warning"><i class="fas fa-star"></i> <?php echo $num_ratings ?></p>
                         </div>
-                        <p class="card-text"><?php echo $professionnal["occupation"] ?></p>
-                        <p><?php echo $professionnal["description"] ?></p>
-                        <div class="social">
-                            <a href="infoProfessionals.php?Id_Professionals=<?php echo $professionnal["Id_Professionals"] ?>" type="button" class="btn btn-primary">Profile</a>
-                        </div>
-                    </div>
+
+                        <div>
+                            <p class="card-text card w-100"> <?php echo $professionnal["occupation"] . " / " . $professionnal["city"] ?></p>
+                            <!-- <p class="card-text card d-flex w-100"> <i class="fa-solid fa-user"></i> <span><?php echo $professionnal["occupation"] ?></span></p> -->
+                            <!-- <p class="card-text card w-100"> <i class='fa-solid fa-phone-volume'></i> <?php echo $professionnal["phone_number"] ?></p> -->
+
+                </div>
+                <p><?php echo $professionnal["description"] ?></p>
+                <div class="social">
+                    <a href="infoProfessionals.php?Id_Professionals=<?php echo $professionnal["Id_Professionals"] ?>" type="button" class="btn text-light btn-profile">Profile</a>
                 </div>
             </div>
+        </div>
+    </div>
         <?php
         endforeach;
         ?>

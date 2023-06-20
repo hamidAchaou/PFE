@@ -9,13 +9,20 @@ class Liked extends Dbh {
 
         $stmt = $this->connect()->prepare("INSERT INTO liked (Id_Posts, Id_client) VALUES (?, ?)");
 
+        if (!$stmt) {
+            // Handle connection error
+            $errorInfo = $this->connect()->errorInfo();
+            echo "Connection failed: " . $errorInfo[2];
+            exit();
+        }
+
         if (!$stmt->execute(array($postId, $clientId))) {
             header("location: ../pages/user/homePage.php?error=stmtfailed");
             exit();
         }
 
         $stmt = null;
-        header("location: ../pages/user/works.php?addLikes=success");
+        // header("location: ../pages/user/works.php?addLikes=success");
     }
 
     // check if a post has been liked by a client

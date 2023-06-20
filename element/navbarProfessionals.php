@@ -11,7 +11,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
       <a class="navbar-brand" href="#">
-        <img src="logo.png" alt="Logo">
+      <img src="../../asset//images/Logo.png" alt="Logo">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -42,10 +42,16 @@
                     if(isset($_SESSION['Id_Professionals'])) {
                       $infoProfessional = new GetProfessionalsData();
                       $infoOneProfessional = $infoProfessional->oneProfessionalsData($_SESSION['Id_Professionals']);
-                    ?>
-
-                    <img src="../../asset//uploads/<?php echo $infoOneProfessional[0]['img_profile'] ?>" width="40" height="40" class="rounded-circle">
-                    
+                      if(isset($infoOneProfessional[0]['img_profile'])) {
+                      ?>
+                        <img src="../../asset//uploads/<?php echo $infoOneProfessional[0]['img_profile'] ?>" width="40" height="40" class="rounded-circle">
+                    <?php
+                      } else {
+                        ?>
+                          <img src="../../asset//images/1.jpg" width="40" height="40" class="rounded-circle">
+                        <?php
+                          }
+                        ?>
                   <?php  
                     } else {
                   ?>

@@ -18,6 +18,23 @@ class Professionals extends Dbh {
         return $professionalsData;
     }
 
+    // get Number Of professionals  
+    protected function getNumProfessionalsInfo() {
+        $stmt = $this->connect()->prepare('SELECT COUNT(*) as num_rows FROM professionals;');
+
+        if (!$stmt->execute()) {
+            $stmt = null;
+            header("location: ../pages/user/homePage.php?errer=stmtfailed");
+            exit();
+        }
+
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $numRows = $result['num_rows'];
+
+        return $numRows;
+    }
+
+
     // get One Professionals
     protected function getOneProfessionals($Id_Professionals) {
         $stmt = $this->connect()->prepare('SELECT * FROM professionals WHERE Id_Professionals = ?;');
@@ -90,4 +107,22 @@ class Professionals extends Dbh {
   
         return $professionals;
      }
+
+    //  Delete Professionals data
+    public function deleteProfessional($id) {
+        // Delete the professional
+        $stmt = $this->connect()->prepare("DELETE FROM Professionals WHERE Id_Professionals = ?");
+        $stmt->execute([$id]);
+        $stmt = null;
+
+        // Delete the professional's posts
+        $stmt = $this->connect()->prepare("DELETE FROM Posts WHERE Id_Professionals = ?");
+        $stmt->execute([$id]);
+        $stmt = null;
+
+        // Delete the professional's ratings
+        $stmt = $this->connect()->prepare("DELETE FROM Evaluate WHERE Id_Professionals = ?");
+        $stmt->execute([$id]);
+        $stmt = null;
+    }
 }

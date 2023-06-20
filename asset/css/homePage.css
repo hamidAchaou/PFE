@@ -1,5 +1,5 @@
 /* ================== start navbar ======================= */
-.navbar {
+/* .navbar {
     height: 71px;
     padding-left: 5%;
     padding-right: 5%;
@@ -8,10 +8,10 @@
     left: 0;
     width: 100%;
     z-index: 999;
-}
+} */
 
 
-.navbar a,
+/* .navbar a,
 .navbar a:focus {
   display: flex;
   align-items: center;
@@ -37,15 +37,15 @@
 .navbar .active:focus,
 .navbar li:hover>a {
   color: #03a4ed;
-}
+} */
 
 /* ================== end navbar ======================= */
 /* ================== start header ======================= */
 .jumbotron {
-  /* margin-top: 3%; */
+  /* margin-top: 7%; */
   /* margin-bottom: 0; */
-    background: url(../../asset/images/pexels-andrea-piacquadio-3846262.jpg) center center/cover;
-    /* height: 500px; */
+    background: url(../../asset/images/nn.jpg) center center/cover;
+    height: 570px;
 }
 
 /* style form serch */

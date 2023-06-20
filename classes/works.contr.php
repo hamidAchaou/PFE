@@ -9,6 +9,12 @@
         return $worksProfessionals;
     }
 
+    // Get all the professionals' data
+    public function getNumPostsProfessionals() {
+        $worksProfessionals = $this->getNumPosts();
+        return $worksProfessionals;
+    }
+
     // get 3 RAND the professionals Data
     public function getWorksProfessionalsRand() {
       $worksProfessionals = $this->getWorksRand();

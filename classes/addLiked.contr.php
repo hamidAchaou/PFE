@@ -8,6 +8,10 @@ class AddLikedPost extends Liked {
         return $this->setLikedPost($postId, $clientId);
     }
 
+    public function getNumLikes($postId) {
+        return $this->countLikes($postId);
+    }
+
 }
 
 ?>

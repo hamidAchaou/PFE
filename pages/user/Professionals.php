@@ -77,43 +77,62 @@
 <div class="pl-5 pr-5 row justify-content-center w-100 m-0" data-aos="fade-up">
 <?php
 
-    // display cards width search 
-    if(isset($_POST['btn-search'])) {
+    // Number of professionals to display per page
+    $professionalsPerPage = 6;
 
-        $city = $_POST['city']; // get input city
-        $occupation = $_POST['occupation']; // get occupation input
+    // Current page number
+    $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
 
-        include_once "../../classes/professionals.contr.php"; // declaration classes contr Professionals
+    if (isset($_POST['btn-search'])) {
+        $city = $_POST['city'];
+        $occupation = $_POST['occupation'];
 
-        // get class prfessionals
+        include_once "../../classes/professionals.contr.php";
         $searchProfessional = new GetProfessionalsData();
-        // get all data width search
         $getProfessionalsBySearch = $searchProfessional->searchByCityAndOccupation($city, $occupation);
-        // print_r($getProfessionalsBySearch);
-    
-        // lop in data Professional for display
-        foreach ($getProfessionalsBySearch as $professionnal) :
-      ?>
 
-          <!-- card Professionals -->
-          <div class="col-lg-4 col-md-6 col-sm-12 mb-4 card-professionals">
-              <div class="card member">
-                  <img src="../../asset/uploads/<?php echo $professionnal["img_profile"] ?>" class="card-img-top" alt="">
-                  <div class="card-body member-content">
-                      <h3 class="card-title"><?php echo $professionnal["first_name"] . $professionnal["last_name"] ?></h3>
-                      <p class="card-text"><?php echo $professionnal["occupation"] ?></p>
-                      <p><?php echo $professionnal["description"] ?></p>
-                      <div class="social">
-                      <a href="infoProfessionals.php?Id_Professionals=<?php echo $professionnal["Id_Professionals"] ?>" type="button" class="btn btn-primary">Profile</a>
-                      </div>
-                  </div>
-              </div>
-          </div>
-                  
-          
-      <?php
-        endforeach;
-    } else {
+        // Pagination logic
+        $totalProfessionals = count($getProfessionalsBySearch);
+        $totalPages = ceil($totalProfessionals / $professionalsPerPage);
+        $startIndex = ($currentPage - 1) * $professionalsPerPage;
+        $displayProfessionals = array_slice($getProfessionalsBySearch, $startIndex, $professionalsPerPage);
+
+        foreach ($displayProfessionals as $professionnal) :
+?>
+
+<!-- card Professionals -->
+<div class="col-lg-4 col-md-6 col-sm-12 mb-4 card-professionals">
+    <div class="card member">
+        <img src="../../asset/uploads/<?php echo $professionnal["img_profile"] ?>" class="card-img-top" alt="">
+        <div class="card-body member-content">
+            <h3 class="card-title"><?php echo $professionnal["first_name"] . $professionnal["last_name"] ?></h3>
+            <p class="card-text"><?php echo $professionnal["occupation"] . " | " .  $professionnal["phone_number"] ?></p>
+            <p><?php echo $professionnal["description"] ?></p>
+            <div class="social">
+                <a href="infoProfessionals.php?Id_Professionals=<?php echo $professionnal["Id_Professionals"] ?>"
+                    type="button" class="btn btn-primary">Profile</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php
+    endforeach;
+?>
+
+<!-- Pagination -->
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        <?php
+            for ($page = 1; $page <= $totalPages; $page++) {
+                $active = $page == $currentPage ? 'active' : '';
+                echo '<li class="page-item ' . $active . '"><a class="page-link" href="?page=' . $page . '">' . $page . '</a></li>';
+            }
+        ?>
+    </ul>
+</nav>
+<?php
+ }else {
 
       // get data Professionals
       include "../../includes/professionals.inc.php";

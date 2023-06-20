@@ -16,6 +16,22 @@ class WorksInfo extends Dbh {
         $worksData = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $worksData;
     }
+    
+// Get Number of Posts
+protected function getNumPosts() {
+    $stmt = $this->connect()->prepare("SELECT COUNT(*) as num_rows FROM posts");
+
+    if (!$stmt->execute()) {
+        header("location: ../pages/user/homePage.php?error=stmtfailed");
+        exit();
+    }
+
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    $numRows = $result['num_rows'];
+
+    return $numRows;
+}
+
 
     // get 3 RAND the professionals Data
     protected function getWorksRand() {

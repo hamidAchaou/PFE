@@ -10,7 +10,7 @@
   }
   
   .posts .header-posts .info-man-posts h6 {
-    color: black;
+    /* color: black; */
     font-weight: 600;
   }
   
@@ -55,7 +55,94 @@
   
   
   
+  /* ============================================================================================= */
+  .card-posts {
+    margin-top: 20px;
+  }
   
+  .card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-header {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .card-header img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+  }
+  
+  .info-man-posts h4 {
+    padding-top: 8%;
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .info-man-posts h6 {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 0;
+  }
+  
+  .rating {
+    margin-top: 10px;
+  }
+  
+  .rating p {
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+  
+  .content-posts {
+    padding: 20px;
+  }
+  
+  .title-works {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .content-posts p {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .card-footer {
+    background-color: #f5f5f5;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 10px;
+  }
+  
+  .card-footer .h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .card-footer button {
+    padding: 5px 10px;
+    /* background-color: #007bff; */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .card-footer button:hover {
+    background-color: #0056b3;
+  }
+  
+/* =========================================================================================================== */
+
   
   
   @media (min-width: 768px) {

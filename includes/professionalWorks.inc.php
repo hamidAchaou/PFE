@@ -22,8 +22,28 @@ $infoOneProfessional = $infoProfessional->oneProfessionalsData($Id_Professionals
         <div class="col-md-4">
             <div class="card">
                 <div class="card-body">
-                    <div class="profile-userpic w-100 d-flex justifay-content-center">
-                        <img src="../../asset//uploads/<?php echo $infoOneProfessional[0]['img_profile'] ?>" class="img-responsive" alt>
+                    <div>
+                        <div class="profile-userpic w-100 d-flex justifay-content-center">
+                            <img src="../../asset//uploads/<?php echo $infoOneProfessional[0]['img_profile'] ?>" class="img-responsive" alt>
+                        </div>
+
+                        <div class="rating mt-3">
+                            <?php
+                            // Get the number of ratings for professionals
+                            include_once "../../classes/get-numRating.contr.php";
+                            $numRating = new RatingController($infoOneProfessional[0]["Id_Professionals"]);
+                            $num_ratings = $numRating->getRatingProfessionals();
+
+                            // Draw stars based on the number of ratings
+                            for ($i = 1; $i <= 5; $i++) {
+                                if ($i <= $num_ratings) {
+                                    echo '<i class="fas fa-star text-warning"></i>';
+                                } else {
+                                    echo '<i class="far fa-star"></i>';
+                                }
+                            }
+                            ?>
+                        </div>
                     </div>
                     <div class="profile-usertitle">
                         <div class="profile-usertitle-name"><?php echo $infoOneProfessional[0]['first_name'] . " " . $infoOneProfessional[0]["last_name"] ?></div>
@@ -40,10 +60,10 @@ $infoOneProfessional = $infoProfessional->oneProfessionalsData($Id_Professionals
                 <div class="card-body">
                     <div>
 
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li id="updateProfileTab" role="presentation" class="mr-4 border border-secondary  p-2 active text-light"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Update Profile</a></li>
-                        <li id="myWorksTab" role="presentation" class="border border-secondary p-2 text-light"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">My works</a></li>
-                    </ul>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li id="updateProfileTab" role="presentation" class="mr-4 border border-secondary  p-2 active text-light"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Update Profile</a></li>
+                            <li id="myWorksTab" role="presentation" class="border border-secondary p-2 text-light"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">My works</a></li>
+                        </ul>
 
 
                         <div class="tab-content">
@@ -153,5 +173,3 @@ $infoOneProfessional = $infoProfessional->oneProfessionalsData($Id_Professionals
         </div>
     </div>
 </div>
-
-

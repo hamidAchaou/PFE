@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
     <!-- main css -->
     <link rel="stylesheet" href="../../asset/css/main.css">
@@ -57,7 +57,6 @@
         <div class="container">
             <h1 class="display-4">Publications for your professionals</h1>
             <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et magna bibendum bibendum.</p>
-            <a class="btn btn-outline-light btn-lg" href="#" role="button">Learn more</a>
         </div>
     <!-- </div> -->
     <!--=================== end header ================================  -->
