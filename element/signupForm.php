@@ -4,17 +4,17 @@
 <?php
     if (isset($_GET['error'])) {
         if ($_GET['error'] == "emptyinput") {
-            echo '<p class="text-danger text-center msg-errore pt-2 pb-2">Please fill in all fields.</p>';
+            echo '<p class="text-danger text-center error-message pt-2 pb-2">Please fill in all fields.</p>';
         } elseif ($_GET['error'] == "passMatch") {
-            echo '<p class="text-danger text-center msg-errore pt-2 pb-2">Password is not match.</p>';
+            echo '<p class="text-danger text-center error-message pt-2 pb-2">Password is not match.</p>';
         } elseif ($_GET['error'] == "emailMatch") {
-            echo '<p class="text-danger text-center msg-errore pt-2 pb-2">this email is exist please choose another email.</p>';
+            echo '<p class="text-danger text-center error-message pt-2 pb-2">this email is exist please choose another email.</p>';
         } elseif ($_GET['error'] == "stmtfailed") {
-            echo '<p class="text-danger text-center msg-errore pt-2 pb-2">Something went wrong. Please try again.</p>';
+            echo '<p class="text-danger text-center error-message pt-2 pb-2">Something went wrong. Please try again.</p>';
         }
     } elseif (isset($_GET['signUp'])) {
         if ($_GET['signUp'] == "success") {
-            echo '<p class="text-success text-center msg-errore pt-2 pb-2 bg-light h4">SignUp successful.</p>';
+            echo '<p class="text-success text-center success-message msg-errore pt-2 pb-2 bg-light h4">SignUp successful.</p>';
         }
     }
     ?>

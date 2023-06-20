@@ -25,7 +25,7 @@ $currentPageProfessionals = isset($pages[$page - 1]) ? $pages[$page - 1] : [];
     <div class="col-lg-4 col-md-6 col-sm-12 mb-4 card-professionals">
         <div class="card member">
         <img src="../../asset/uploads/<?php echo $professionnal['img_profile'] ?>" class="card-img-top img-profile" alt="" style="position: relative;">            <div class="card-body member-content">
-            <h3 class="card-title"><?php echo $professionnal["first_name"] . $professionnal["last_name"] ?></h3>
+            <h3 class="card-title"><?php echo $professionnal["first_name"] . " " . $professionnal["last_name"] ?></h3>
 
                 <div class="rating">
                     <?php

@@ -13,17 +13,17 @@
     <?php
     if (isset($_GET['error'])) {
         if ($_GET['error'] == "emptyinput") {
-            echo '<p class="text-danger text-center msg-errore pt-2 pb-2">Please fill in all fields.</p>';
+            echo '<p class="text-center error-message  pt-2 pb-2">Please fill in all fields ??</p>';
         } elseif ($_GET['error'] == "usernotfoundEmail") {
-            echo '<p class="text-danger text-center msg-errore pt-2 pb-2">User not found.</p>';
+            echo '<p class="text-center error-message  pt-2 pb-2">User not found ??</p>';
         } elseif ($_GET['error'] == "worningpassword") {
-            echo '<p class="text-danger text-center msg-errore pt-2 pb-2">Incorrect password.</p>';
+            echo '<p class="text-center error-message  pt-2 pb-2">Incorrect password ??</p>';
         } elseif ($_GET['error'] == "stmtfailed") {
-            echo '<p class="text-danger text-center msg-errore pt-2 pb-2">Something went wrong. Please try again.</p>';
+            echo '<p class="text-center error-message  pt-2 pb-2">Something went wrong ?? Please try again.</p>';
         }
     } elseif (isset($_GET['login'])) {
         if ($_GET['login'] == "success") {
-            echo '<p class="text-success text-center msg-errore pt-2 pb-2">Login successful.</p>';
+            echo '<p class="text-success text-center success-message  pt-2 pb-2">Login successful.</p>';
         }
     }
     ?>
@@ -40,3 +40,4 @@
         <a href="#" class="text-primary a-signup">Create an account</a>
     </p>
 </form>
+

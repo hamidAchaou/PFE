@@ -125,7 +125,7 @@ $dataWorksProfessionals = $worksInfo->getWorksProfessionals();
                     $likeBtn = '<i class="fa-solid fa-heart text-danger h3"></i>';
                 } else {
                     // $likeBtn = '<i class="fa-sharp fa-regular fa-heart text-danger h3"></i>';
-                    $likeBtn = "<button type='submit' name='like_post' class='btn btn-transparent'><i class='fa-regular fa-heart h3'></i></button>"; // default like button
+                    $likeBtn = "<button type='submit' name='like_post' class='btn btn-transparent'>ff</button>"; // default like button
                 }
             } else {
                 // user is not logged in
