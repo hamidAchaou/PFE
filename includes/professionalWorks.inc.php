@@ -68,7 +68,6 @@ $infoOneProfessional = $infoProfessional->oneProfessionalsData($Id_Professionals
 
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active pt-3" id="home">
-
                                 <!-- start from info Professional -->
                                 <form method="post" action="../../includes/updateProfessionalInfo.inc.php" enctype="multipart/form-data">
                                     <div class="row">
@@ -129,8 +128,8 @@ $infoOneProfessional = $infoProfessional->oneProfessionalsData($Id_Professionals
                                     <button type="submit" name="uploadProfile" class="btn btn-primary">Update</button>
                                 </form>
                                 <!-- end from info Professional -->
-
                             </div>
+                            <!-- ================== start works Professionals ================================= -->
                             <div role="tabpanel" class="tab-pane pt-3" id="profile">
                                 <?php
                                 if ($dataWorksProfessionals == null) {
@@ -159,12 +158,15 @@ $infoOneProfessional = $infoProfessional->oneProfessionalsData($Id_Professionals
                                     }
                                 }
                                 ?>
+
                                 <!-- include modal delete Posts Professionals -->
                                 <?php include_once "../../element/modal-DeletePostProfessional.php" ?>
                                 <!-- include modale edite  -->
                                 <?php include_once "../../element/modal-editPostsProfessiional.php" ?>
 
                             </div>
+                            <!-- ================== end works Professionals ================================= -->
+
                         </div>
 
                     </div>

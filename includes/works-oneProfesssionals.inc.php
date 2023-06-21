@@ -1,8 +1,9 @@
 <?php
+// get class worcs contr Posts Professionals and Professionals
 include "../../classes/works.contr.php";
 include_once "../../classes/professionals.contr.php";
+$Id_Professionals = $_GET['Id_Professionals']; //id Professionals
 
-$Id_Professionals = $_GET['Id_Professionals'];
 // get one professional 
 $professional = new GetProfessionalsData();
 $dataProfessional = $professional->oneProfessionalsData($Id_Professionals);
@@ -48,8 +49,17 @@ $dataProfessional = $professional->oneProfessionalsData($Id_Professionals);
                     $numRating = new RatingController($dataProfessional[0]["Id_Professionals"]);
                     $num_ratings = $numRating->getRatingProfessionals();
                     // var_dump($ratingProfessional);
+                    
+                    // Draw stars based on the number of ratings
+                    for ($i = 1; $i <= 5; $i++) {
+                        if ($i <= $num_ratings) {
+                            echo '<i class="fas fa-star text-warning mt-4"></i>';
+                        } else {
+                            echo '<i class="far fa-star mt-4"></i>';
+                        }
+                    }
                     ?>
-                    <p class="text-warning h3"><i class="fas fa-star"></i> <?php echo $num_ratings ?></p>
+                    
                 </div>
                 <?php
                     }
@@ -104,26 +114,34 @@ $dataProfessional = $professional->oneProfessionalsData($Id_Professionals);
                                                 <div class="posts d-flex justify-content-center mx-auto">
                                                     <div class="card">
                                                         <div class="card-header d-flex header-posts ">
-                                                            <img src="../../asset/images/man-2.jpg" alt="">
+                                                            <img src="../../asset/uploads/<?php echo $worksData['img_profile'] ?>" alt="">
                                                             <div class="info-man-posts ml-3">
                                                                 <h4><?php echo $worksData['first_name'] . " " . $worksData['last_name'] ?></h4>
-                                                                <h6><?php echo $worksData['occupation'] ?></h6>
+                                                                <h6><?php echo $worksData['occupation'] . " / " . $worksData['city'] ?></h6>
                                                                 <div class="rating">
-                                                                <?php
-                                                                //   get num rating for Professionals
-                                                                include_once "../../classes/get-numRating.contr.php";
-                                                                $numRating = new RatingController($worksData["Id_Professionals"]);
-                                                                $num_ratings = $numRating->getRatingProfessionals();
-                                                                // var_dump($ratingProfessional);
-                                                                ?>
-                                                                <p class="text-warning h5"><i class="fas fa-star"></i> <?php echo $num_ratings ?></p>
-                                                            </div>
+                                                                    <?php
+                                                                    //   get num rating for Professionals
+                                                                    include_once "../../classes/get-numRating.contr.php";
+                                                                    $numRating = new RatingController($worksData["Id_Professionals"]);
+                                                                    $num_ratings = $numRating->getRatingProfessionals();
+                                                                    // var_dump($ratingProfessional);
+
+                                                                    // Draw stars based on the number of ratings
+                                                                    for ($i = 1; $i <= 5; $i++) {
+                                                                        if ($i <= $num_ratings) {
+                                                                            echo '<i class="fas fa-star text-warning mt-4"></i>';
+                                                                        } else {
+                                                                            echo '<i class="far fa-star mt-4"></i>';
+                                                                        }
+                                                                    }
+                                                                    ?>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div class="card-body content-posts m-sm-4 mt-0">
                                                             <h2 class="title-works text-center"><?php echo $worksData['title'] ?></h2>
                                                             <p class="pb-3"><?php echo $worksData['description'] ?></p>
-                                                            <img src="../../asset/images/pexels-andrea-piacquadio-3846262.jpg" alt="" srcset="">
+                                                            <img src="../../asset/uploads/<?php echo $worksData['img_posts'] ?>" alt="" srcset="">
                                                             <!-- <h3 class="w-100 d-flex justify-content-center pt-3"><i class="fa-regular fa-heart"></i></h3> -->
                                                         </div>
                                                     </div>
@@ -146,23 +164,7 @@ $dataProfessional = $professional->oneProfessionalsData($Id_Professionals);
     </div>
 </div>
 
-<?php
-// get rating for this professional
-include_once "../../classes/rating.classes.php";
-$rating = new Rating();
-$averageRating = $rating->getAverageRating($Id_Professionals);
 
-if ($averageRating != null) {
-    echo '<div class="container my-5">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Average Rating:</h5>
-                    <p class="card-text">' . $averageRating . '</p>
-                </div>
-            </div>
-        </div>';
-}
-?>
 
 <script>
     const form = document.querySelector('form');

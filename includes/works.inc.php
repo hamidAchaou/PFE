@@ -1,4 +1,15 @@
 <?php
+if ($_GET['addWorks'] == "success") {
+    echo '<style> 
+              .alert { 
+                color: green; 
+              } 
+          </style>';
+    echo '<script>alert("add works successful.")</script>';
+}
+
+
+
 include "../../classes/works.contr.php";
 include_once "../../classes/getLiked.contr.php";
 

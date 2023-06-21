@@ -135,6 +135,12 @@
     background-color: var(--primary-color);
     color: var(--light-color);
     font-weight: 600;
+    transition: color 0.7s ease; /* Add transition property */
+  }
+  
+  .btn-addWorks:hover {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
   }
   
   /*--------------------------------------------------------------
@@ -168,6 +174,10 @@
   .back-to-top.active {
     visibility: visible;
     opacity: 1;
+  }
+
+  .modal-addPosts {
+    z-index: 9999;
   }
   
   /*--------------------------------------------------------------
@@ -334,14 +344,6 @@
       text-decoration: none;
     }
 
-    /* ==========================
-    # navbar Professionals
-    ========================== */
-    .btn-addWorks {
-        background-color: var(--primary-color);
-        color: var(--light-color);
-        font-weight: 600;
-    }
 
     .hed-addWork {
       background: url(../images/pexels-ksenia-chernaya-5691516.jpg) center center/cover;
