@@ -33,11 +33,6 @@ if (isset($_POST['loginSubmit'])) {
     $login = new LoginContr($email, $password);
     $clientData = $login->loginClient();
 
-    echo $clientData['password'];
-
-    var_dump($clientData);
-
-    print_r($clientData);
 
 
     if (!$clientData) {

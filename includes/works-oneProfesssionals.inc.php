@@ -149,7 +149,7 @@ $dataProfessional = $professional->oneProfessionalsData($Id_Professionals);
                                             </div>
 
                                     <?php
-                                        } // End Foreach
+                                        } // End Foreachj
                                     } // End else
                                     ?>
 
